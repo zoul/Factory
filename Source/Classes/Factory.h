@@ -1,6 +1,9 @@
-@interface Factory : NSObject {}
+@interface Factory : NSObject
+{
+    NSMutableSet *components;
+}
 
 - (void) addComponent: (id) component;
-- (id) getComponent: (Class) compType;
+- (id) assemble: (Class) compType;
 
 @end

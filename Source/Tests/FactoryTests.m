@@ -21,11 +21,18 @@
     [factory release];
 }
 
-- (void) testSimpleWiring
+- (void) testUnknownClassAssembly
+{
+    id anObject = [factory assemble:[NSObject class]];
+    STAssertNil(anObject, @"Factory will not assemble an unknown component.");
+}
+
+- (void) testSimpleDepsAssembly
 {
     [factory addComponent:[Engine class]];
-    Car *car = [factory getComponent:[Car class]];
-    STAssertNotNil(car, @"Factory can build a car.");
+    [factory addComponent:[Car class]];
+    Car *car = [factory assemble:[Car class]];
+    STAssertNotNil(car, @"Factory can build a registered object.");
     STAssertNotNil(car.engine, @"Engine automatically built in.");
 }
 

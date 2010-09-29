@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D4080901253800700E2C29D /* MetaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D40808F1253800700E2C29D /* MetaTest.m */; };
 		0D4080BE1253809900E2C29D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080BD1253809900E2C29D /* Factory.m */; };
 		0D4080BF1253809900E2C29D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080BD1253809900E2C29D /* Factory.m */; };
 		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
@@ -15,6 +14,18 @@
 		0D4080CA1253816900E2C29D /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C91253816900E2C29D /* Engine.m */; };
 		0D4080CB1253816900E2C29D /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C91253816900E2C29D /* Engine.m */; };
 		0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080E91253824000E2C29D /* FactoryTests.m */; };
+		0D40811E1253878400E2C29D /* MARTNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081131253878400E2C29D /* MARTNSObject.m */; };
+		0D40811F1253878400E2C29D /* RTIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081151253878400E2C29D /* RTIvar.m */; };
+		0D4081201253878400E2C29D /* RTMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081171253878400E2C29D /* RTMethod.m */; };
+		0D4081211253878400E2C29D /* RTProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081191253878400E2C29D /* RTProperty.m */; };
+		0D4081221253878400E2C29D /* RTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D40811B1253878400E2C29D /* RTProtocol.m */; };
+		0D4081231253878400E2C29D /* RTUnregisteredClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D40811D1253878400E2C29D /* RTUnregisteredClass.m */; };
+		0D4081241253878400E2C29D /* MARTNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081131253878400E2C29D /* MARTNSObject.m */; };
+		0D4081251253878400E2C29D /* RTIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081151253878400E2C29D /* RTIvar.m */; };
+		0D4081261253878400E2C29D /* RTMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081171253878400E2C29D /* RTMethod.m */; };
+		0D4081271253878400E2C29D /* RTProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081191253878400E2C29D /* RTProperty.m */; };
+		0D4081281253878400E2C29D /* RTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D40811B1253878400E2C29D /* RTProtocol.m */; };
+		0D4081291253878400E2C29D /* RTUnregisteredClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D40811D1253878400E2C29D /* RTUnregisteredClass.m */; };
 		1D3623260D0F684500981E51 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Application.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -36,7 +47,6 @@
 /* Begin PBXFileReference section */
 		0D40808812537FD800E2C29D /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40808912537FD800E2C29D /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
-		0D40808F1253800700E2C29D /* MetaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MetaTest.m; path = Tests/MetaTest.m; sourceTree = "<group>"; };
 		0D4080BC1253809900E2C29D /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Factory.h; path = Classes/Factory.h; sourceTree = "<group>"; };
 		0D4080BD1253809900E2C29D /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Factory.m; path = Classes/Factory.m; sourceTree = "<group>"; };
 		0D4080C41253814000E2C29D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Classes/Car.h; sourceTree = "<group>"; };
@@ -44,6 +54,18 @@
 		0D4080C81253816900E2C29D /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = Classes/Engine.h; sourceTree = "<group>"; };
 		0D4080C91253816900E2C29D /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Engine.m; path = Classes/Engine.m; sourceTree = "<group>"; };
 		0D4080E91253824000E2C29D /* FactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FactoryTests.m; path = Tests/FactoryTests.m; sourceTree = "<group>"; };
+		0D4081121253878400E2C29D /* MARTNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MARTNSObject.h; path = ../MAObjCRuntime/MARTNSObject.h; sourceTree = SOURCE_ROOT; };
+		0D4081131253878400E2C29D /* MARTNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MARTNSObject.m; path = ../MAObjCRuntime/MARTNSObject.m; sourceTree = SOURCE_ROOT; };
+		0D4081141253878400E2C29D /* RTIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTIvar.h; path = ../MAObjCRuntime/RTIvar.h; sourceTree = SOURCE_ROOT; };
+		0D4081151253878400E2C29D /* RTIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTIvar.m; path = ../MAObjCRuntime/RTIvar.m; sourceTree = SOURCE_ROOT; };
+		0D4081161253878400E2C29D /* RTMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMethod.h; path = ../MAObjCRuntime/RTMethod.h; sourceTree = SOURCE_ROOT; };
+		0D4081171253878400E2C29D /* RTMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTMethod.m; path = ../MAObjCRuntime/RTMethod.m; sourceTree = SOURCE_ROOT; };
+		0D4081181253878400E2C29D /* RTProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTProperty.h; path = ../MAObjCRuntime/RTProperty.h; sourceTree = SOURCE_ROOT; };
+		0D4081191253878400E2C29D /* RTProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTProperty.m; path = ../MAObjCRuntime/RTProperty.m; sourceTree = SOURCE_ROOT; };
+		0D40811A1253878400E2C29D /* RTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTProtocol.h; path = ../MAObjCRuntime/RTProtocol.h; sourceTree = SOURCE_ROOT; };
+		0D40811B1253878400E2C29D /* RTProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTProtocol.m; path = ../MAObjCRuntime/RTProtocol.m; sourceTree = SOURCE_ROOT; };
+		0D40811C1253878400E2C29D /* RTUnregisteredClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTUnregisteredClass.h; path = ../MAObjCRuntime/RTUnregisteredClass.h; sourceTree = SOURCE_ROOT; };
+		0D40811D1253878400E2C29D /* RTUnregisteredClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTUnregisteredClass.m; path = ../MAObjCRuntime/RTUnregisteredClass.m; sourceTree = SOURCE_ROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
@@ -108,6 +130,25 @@
 			name = "Testing Classes";
 			sourceTree = "<group>";
 		};
+		0D40810D1253876400E2C29D /* MAObjCRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				0D4081121253878400E2C29D /* MARTNSObject.h */,
+				0D4081131253878400E2C29D /* MARTNSObject.m */,
+				0D4081141253878400E2C29D /* RTIvar.h */,
+				0D4081151253878400E2C29D /* RTIvar.m */,
+				0D4081161253878400E2C29D /* RTMethod.h */,
+				0D4081171253878400E2C29D /* RTMethod.m */,
+				0D4081181253878400E2C29D /* RTProperty.h */,
+				0D4081191253878400E2C29D /* RTProperty.m */,
+				0D40811A1253878400E2C29D /* RTProtocol.h */,
+				0D40811B1253878400E2C29D /* RTProtocol.m */,
+				0D40811C1253878400E2C29D /* RTUnregisteredClass.h */,
+				0D40811D1253878400E2C29D /* RTUnregisteredClass.m */,
+			);
+			name = MAObjCRuntime;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +161,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0D40810D1253876400E2C29D /* MAObjCRuntime */,
 				0D4080C3125380FC00E2C29D /* Testing Classes */,
 				0D4080BB1253808B00E2C29D /* Factory */,
 				080E96DDFE201D6D7F000001 /* App Stuff */,
@@ -134,7 +176,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0D40808F1253800700E2C29D /* MetaTest.m */,
 				32CA4F630368D1EE00C91783 /* prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -264,11 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D4080901253800700E2C29D /* MetaTest.m in Sources */,
 				0D4080BE1253809900E2C29D /* Factory.m in Sources */,
 				0D4080C71253814000E2C29D /* Car.m in Sources */,
 				0D4080CB1253816900E2C29D /* Engine.m in Sources */,
 				0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */,
+				0D40811E1253878400E2C29D /* MARTNSObject.m in Sources */,
+				0D40811F1253878400E2C29D /* RTIvar.m in Sources */,
+				0D4081201253878400E2C29D /* RTMethod.m in Sources */,
+				0D4081211253878400E2C29D /* RTProperty.m in Sources */,
+				0D4081221253878400E2C29D /* RTProtocol.m in Sources */,
+				0D4081231253878400E2C29D /* RTUnregisteredClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +327,12 @@
 				0D4080BF1253809900E2C29D /* Factory.m in Sources */,
 				0D4080C61253814000E2C29D /* Car.m in Sources */,
 				0D4080CA1253816900E2C29D /* Engine.m in Sources */,
+				0D4081241253878400E2C29D /* MARTNSObject.m in Sources */,
+				0D4081251253878400E2C29D /* RTIvar.m in Sources */,
+				0D4081261253878400E2C29D /* RTMethod.m in Sources */,
+				0D4081271253878400E2C29D /* RTProperty.m in Sources */,
+				0D4081281253878400E2C29D /* RTProtocol.m in Sources */,
+				0D4081291253878400E2C29D /* RTUnregisteredClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
