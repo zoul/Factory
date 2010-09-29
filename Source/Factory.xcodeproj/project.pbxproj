@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0D4080901253800700E2C29D /* MetaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D40808F1253800700E2C29D /* MetaTest.m */; };
+		0D4080BE1253809900E2C29D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080BD1253809900E2C29D /* Factory.m */; };
+		0D4080BF1253809900E2C29D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080BD1253809900E2C29D /* Factory.m */; };
+		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
+		0D4080C71253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
+		0D4080CA1253816900E2C29D /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C91253816900E2C29D /* Engine.m */; };
+		0D4080CB1253816900E2C29D /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C91253816900E2C29D /* Engine.m */; };
+		0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080E91253824000E2C29D /* FactoryTests.m */; };
 		1D3623260D0F684500981E51 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Application.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -30,6 +37,13 @@
 		0D40808812537FD800E2C29D /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40808912537FD800E2C29D /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		0D40808F1253800700E2C29D /* MetaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MetaTest.m; path = Tests/MetaTest.m; sourceTree = "<group>"; };
+		0D4080BC1253809900E2C29D /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Factory.h; path = Classes/Factory.h; sourceTree = "<group>"; };
+		0D4080BD1253809900E2C29D /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Factory.m; path = Classes/Factory.m; sourceTree = "<group>"; };
+		0D4080C41253814000E2C29D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Classes/Car.h; sourceTree = "<group>"; };
+		0D4080C51253814000E2C29D /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Car.m; path = Classes/Car.m; sourceTree = "<group>"; };
+		0D4080C81253816900E2C29D /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = Classes/Engine.h; sourceTree = "<group>"; };
+		0D4080C91253816900E2C29D /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Engine.m; path = Classes/Engine.m; sourceTree = "<group>"; };
+		0D4080E91253824000E2C29D /* FactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FactoryTests.m; path = Tests/FactoryTests.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
@@ -63,13 +77,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		080E96DDFE201D6D7F000001 /* App Stuff */ = {
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* Application.h */,
 				1D3623250D0F684500981E51 /* Application.m */,
 			);
+			name = "App Stuff";
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0D4080BB1253808B00E2C29D /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				0D4080BC1253809900E2C29D /* Factory.h */,
+				0D4080BD1253809900E2C29D /* Factory.m */,
+				0D4080E91253824000E2C29D /* FactoryTests.m */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		0D4080C3125380FC00E2C29D /* Testing Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0D4080C81253816900E2C29D /* Engine.h */,
+				0D4080C91253816900E2C29D /* Engine.m */,
+				0D4080C41253814000E2C29D /* Car.h */,
+				0D4080C51253814000E2C29D /* Car.m */,
+			);
+			name = "Testing Classes";
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -84,7 +120,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Classes */,
+				0D4080C3125380FC00E2C29D /* Testing Classes */,
+				0D4080BB1253808B00E2C29D /* Factory */,
+				080E96DDFE201D6D7F000001 /* App Stuff */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -227,6 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D4080901253800700E2C29D /* MetaTest.m in Sources */,
+				0D4080BE1253809900E2C29D /* Factory.m in Sources */,
+				0D4080C71253814000E2C29D /* Car.m in Sources */,
+				0D4080CB1253816900E2C29D /* Engine.m in Sources */,
+				0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +278,9 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* Application.m in Sources */,
+				0D4080BF1253809900E2C29D /* Factory.m in Sources */,
+				0D4080C61253814000E2C29D /* Car.m in Sources */,
+				0D4080CA1253816900E2C29D /* Engine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +309,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LogicTests-Info.plist";
 				OTHER_LDFLAGS = (
@@ -276,7 +322,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
-				SDKROOT = iphonesimulator4.1;
+				SDKROOT = iphonesimulator4.0;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -294,6 +340,7 @@
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREFIX_HEADER = prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LogicTests-Info.plist";
 				OTHER_LDFLAGS = (
@@ -306,7 +353,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
-				SDKROOT = iphonesimulator4.1;
+				SDKROOT = iphonesimulator4.0;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
