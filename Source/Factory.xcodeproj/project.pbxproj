@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D08CD0512545A6B00BADE80 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD0412545A6B00BADE80 /* Worker.m */; };
+		0D08CD0612545A6B00BADE80 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD0412545A6B00BADE80 /* Worker.m */; };
 		0D4080BE1253809900E2C29D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080BD1253809900E2C29D /* Factory.m */; };
 		0D4080BF1253809900E2C29D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080BD1253809900E2C29D /* Factory.m */; };
 		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D08CD0312545A6B00BADE80 /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Worker.h; path = Classes/Worker.h; sourceTree = "<group>"; };
+		0D08CD0412545A6B00BADE80 /* Worker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Worker.m; path = Classes/Worker.m; sourceTree = "<group>"; };
 		0D40808812537FD800E2C29D /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40808912537FD800E2C29D /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		0D4080BC1253809900E2C29D /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Factory.h; path = Classes/Factory.h; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				0D4080C91253816900E2C29D /* Engine.m */,
 				0D4080C41253814000E2C29D /* Car.h */,
 				0D4080C51253814000E2C29D /* Car.m */,
+				0D08CD0312545A6B00BADE80 /* Worker.h */,
+				0D08CD0412545A6B00BADE80 /* Worker.m */,
 			);
 			name = "Testing Classes";
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				0D4081211253878400E2C29D /* RTProperty.m in Sources */,
 				0D4081221253878400E2C29D /* RTProtocol.m in Sources */,
 				0D4081231253878400E2C29D /* RTUnregisteredClass.m in Sources */,
+				0D08CD0512545A6B00BADE80 /* Worker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +340,7 @@
 				0D4081271253878400E2C29D /* RTProperty.m in Sources */,
 				0D4081281253878400E2C29D /* RTProtocol.m in Sources */,
 				0D4081291253878400E2C29D /* RTUnregisteredClass.m in Sources */,
+				0D08CD0612545A6B00BADE80 /* Worker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,18 +9,25 @@
 {
     [super init];
     components = [[NSMutableSet alloc] init];
+    singletons = [[NSMutableSet alloc] init];
     return self;
 }
 
 - (void) dealloc
 {
+    [singletons release];
     [components release];
     [super dealloc];
 }
 
-- (void) addComponent: (id) component
+- (void) addComponent: (Class) component
 {
     [components addObject:component];
+}
+
+- (void) addSingleton: (id) singleton
+{
+    [singletons addObject:singleton];
 }
 
 - (id) classForEncoding: (NSString*) encoding
@@ -34,6 +41,15 @@
 
 - (id) assemble: (Class) compType
 {
+    // The factory is a special kind of dependency, too.
+    if ([self isMemberOfClass:compType])
+        return self;
+
+    // Try to find a singleton first.
+    for (id singleton in singletons)
+        if ([singleton isMemberOfClass:compType])
+            return singleton;
+
     // Do not assemble unknown components.
     if (![components containsObject:compType])
         return nil;
