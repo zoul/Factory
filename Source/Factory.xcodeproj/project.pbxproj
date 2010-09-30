@@ -39,7 +39,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0D40808712537FD800E2C29D /* LogicTests */;
+			remoteGlobalIDString = 0D40808712537FD800E2C29D;
 			remoteInfo = LogicTests;
 		};
 /* End PBXContainerItemProxy section */
@@ -361,6 +361,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LogicTests-Info.plist";
@@ -392,6 +393,7 @@
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LogicTests-Info.plist";
@@ -423,6 +425,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Factory-Info.plist";
 				PRODUCT_NAME = Factory;
+				SDKROOT = iphonesimulator4.0;
 			};
 			name = Debug;
 		};
@@ -436,6 +439,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Factory-Info.plist";
 				PRODUCT_NAME = Factory;
+				SDKROOT = iphonesimulator4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
