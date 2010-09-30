@@ -22,6 +22,7 @@
         [result addObject:property];
         [property release];
     }
+    free(properties);
     return result;
 }
 
