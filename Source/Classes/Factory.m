@@ -1,12 +1,13 @@
 #import "Factory.h"
-#import "MARTNSObject.h"
-#import "RTProperty.h"
+#import "ClassAnalyzer.h"
+#import "ClassProperty.h"
 
 @implementation Factory
 
 - (id) init
 {
     [super init];
+    analyzer = [[ClassAnalyzer alloc] init];
     components = [[NSMutableSet alloc] init];
     singletons = [[NSMutableSet alloc] init];
     return self;
@@ -14,6 +15,7 @@
 
 - (void) dealloc
 {
+    [analyzer release];
     [singletons release];
     [components release];
     [super dealloc];
@@ -29,25 +31,15 @@
     [singletons addObject:singleton];
 }
 
-- (id) classForEncoding: (NSString*) encoding
-{
-    if (![encoding hasPrefix:@"@"])
-        return nil;
-    NSString *suffix = [encoding substringFromIndex:2];
-    NSString *className = [suffix substringToIndex:[suffix length]-1];
-    return NSClassFromString(className);
-}
-
 - (void) wire: (id) instance
 {
-    NSArray *properties = [[instance class] rt_properties];
-    for (RTProperty *property in properties)
+    NSArray *properties = [analyzer propertiesOf:[instance class]];
+    for (ClassProperty *property in properties)
     {
         // Skip property if already connected.
         if ([instance valueForKey:[property name]] != nil)
             continue;
-        Class propertyClass = [self classForEncoding:[property typeEncoding]];
-        id dependency = [self assemble:propertyClass];
+        id dependency = [self assemble:[property className]];
         [instance setValue:dependency forKey:[property name]];
     }
 }
