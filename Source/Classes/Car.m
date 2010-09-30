@@ -7,7 +7,7 @@
 @end
 
 @implementation Car
-@synthesize engine, transmission, maxSpeed;
+@synthesize engine, transmission;
 
 - (void) dealloc
 {

@@ -24,7 +24,7 @@
 - (void) testPropertySniffing
 {
     NSArray *props = [analyzer propertiesOf:[Car class]];
-    STAssertEquals([props count], (NSUInteger)3, @"Detect all properties.");
+    STAssertEquals([props count], (NSUInteger)2, @"Detect all properties.");
 }
 
 @end

@@ -35,4 +35,10 @@
     return [self classForEncoding:typeStr];
 }
 
+- (BOOL) readOnly
+{
+    return [attributes rangeOfString:@",R,"].location != NSNotFound ||
+        [attributes hasSuffix:@",R"];
+}
+
 @end

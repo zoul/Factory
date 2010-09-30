@@ -36,6 +36,9 @@
     NSArray *properties = [analyzer propertiesOf:[instance class]];
     for (ClassProperty *property in properties)
     {
+        // Skip RO properties.
+        if ([property readOnly])
+            continue;
         // Skip property if already connected.
         if ([instance valueForKey:[property name]] != nil)
             continue;

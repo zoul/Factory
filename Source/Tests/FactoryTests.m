@@ -1,6 +1,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "Factory.h"
 #import "Worker.h"
+#import "Driver.h"
 #import "Car.h"
 
 @interface FactoryTests : SenTestCase
@@ -65,6 +66,14 @@
     Worker *worker = [factory assemble:[Worker class]];
     STAssertNotNil(worker.factory, @"Factory found as a dependency.");
     STAssertEquals(worker.factory, factory, @"And is the original instance.");
+}
+
+- (void) testReadOnlyProperties
+{
+    [factory addComponent:[Car class]];
+    [factory addComponent:[Driver class]];
+    STAssertNoThrow([factory assemble:[Driver class]],
+        @"Does not attempt to wire read-only properties.");
 }
 
 #pragma mark Wiring Existing Objects
