@@ -41,4 +41,22 @@
         [attributes hasSuffix:@",R"];
 }
 
+- (NSString*) description
+{
+    return [NSString stringWithFormat:@"<Property: %@>", name];
+}
+
+- (NSUInteger) hash
+{
+    return [name hash];
+}
+
+- (BOOL) isEqual: (id) object
+{
+    if (![object isMemberOfClass:[self class]])
+        return NO;
+    return [[object name] isEqual:name] &&
+        [[object attributes] isEqual:attributes];
+}
+
 @end
