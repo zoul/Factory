@@ -39,7 +39,7 @@
         // Skip property if already connected.
         if ([instance valueForKey:[property name]] != nil)
             continue;
-        id dependency = [self assemble:[property className]];
+        id dependency = [self assemble:[property classType]];
         [instance setValue:dependency forKey:[property name]];
     }
 }

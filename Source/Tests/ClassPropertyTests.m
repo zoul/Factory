@@ -11,7 +11,7 @@
 {
     ClassProperty *p = [[ClassProperty alloc]
         initWithName:@"Engine" attributes:@"T@\"Engine\",&,Vengine"];
-    STAssertEqualObjects(p.className, [Engine class], @"Correctly parse property class.");
+    STAssertEqualObjects(p.classType, [Engine class], @"Correctly parse property class.");
     [p release];
 }
 

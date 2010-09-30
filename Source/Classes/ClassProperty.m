@@ -27,7 +27,7 @@
     return NSClassFromString(className);
 }
 
-- (Class) className
+- (Class) classType
 {
     NSAssert([attributes hasPrefix:@"T"], @"Invalid attribute string.");
     NSString *suffix = [attributes substringFromIndex:1];
