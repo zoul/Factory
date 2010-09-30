@@ -1,3 +1,0 @@
-@interface Engine : NSObject {}
-
-@end

@@ -1,7 +1,6 @@
 #import "Factory.h"
 #import "MARTNSObject.h"
 #import "RTProperty.h"
-#import "Engine.h"
 
 @implementation Factory
 
@@ -39,6 +38,20 @@
     return NSClassFromString(className);
 }
 
+- (void) wire: (id) instance
+{
+    NSArray *properties = [[instance class] rt_properties];
+    for (RTProperty *property in properties)
+    {
+        // Skip property if already connected.
+        if ([instance valueForKey:[property name]] != nil)
+            continue;
+        Class propertyClass = [self classForEncoding:[property typeEncoding]];
+        id dependency = [self assemble:propertyClass];
+        [instance setValue:dependency forKey:[property name]];
+    }
+}
+
 - (id) assemble: (Class) compType
 {
     // The factory is a special kind of dependency, too.
@@ -55,16 +68,9 @@
         return nil;
 
     // Create component.
-    id instance = [[compType alloc] init];
-
-    // Connect dependencies.
-    for (RTProperty *property in [compType rt_properties]) {
-        Class propertyClass = [self classForEncoding:[property typeEncoding]];
-        id dependency = [self assemble:propertyClass];
-        [instance setValue:dependency forKey:[property name]];
-    }
-
-    return [instance autorelease];
+    id instance = [[[compType alloc] init] autorelease];
+    [self wire:instance];
+    return instance;
 }
 
 @end

@@ -13,8 +13,6 @@
 		0D4080BF1253809900E2C29D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080BD1253809900E2C29D /* Factory.m */; };
 		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080C71253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
-		0D4080CA1253816900E2C29D /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C91253816900E2C29D /* Engine.m */; };
-		0D4080CB1253816900E2C29D /* Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C91253816900E2C29D /* Engine.m */; };
 		0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080E91253824000E2C29D /* FactoryTests.m */; };
 		0D40811E1253878400E2C29D /* MARTNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081131253878400E2C29D /* MARTNSObject.m */; };
 		0D40811F1253878400E2C29D /* RTIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4081151253878400E2C29D /* RTIvar.m */; };
@@ -55,8 +53,6 @@
 		0D4080BD1253809900E2C29D /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Factory.m; path = Classes/Factory.m; sourceTree = "<group>"; };
 		0D4080C41253814000E2C29D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Classes/Car.h; sourceTree = "<group>"; };
 		0D4080C51253814000E2C29D /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Car.m; path = Classes/Car.m; sourceTree = "<group>"; };
-		0D4080C81253816900E2C29D /* Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Engine.h; path = Classes/Engine.h; sourceTree = "<group>"; };
-		0D4080C91253816900E2C29D /* Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Engine.m; path = Classes/Engine.m; sourceTree = "<group>"; };
 		0D4080E91253824000E2C29D /* FactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FactoryTests.m; path = Tests/FactoryTests.m; sourceTree = "<group>"; };
 		0D4081121253878400E2C29D /* MARTNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MARTNSObject.h; path = ../MAObjCRuntime/MARTNSObject.h; sourceTree = SOURCE_ROOT; };
 		0D4081131253878400E2C29D /* MARTNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MARTNSObject.m; path = ../MAObjCRuntime/MARTNSObject.m; sourceTree = SOURCE_ROOT; };
@@ -126,8 +122,6 @@
 		0D4080C3125380FC00E2C29D /* Testing Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0D4080C81253816900E2C29D /* Engine.h */,
-				0D4080C91253816900E2C29D /* Engine.m */,
 				0D4080C41253814000E2C29D /* Car.h */,
 				0D4080C51253814000E2C29D /* Car.m */,
 				0D08CD0312545A6B00BADE80 /* Worker.h */,
@@ -313,7 +307,6 @@
 			files = (
 				0D4080BE1253809900E2C29D /* Factory.m in Sources */,
 				0D4080C71253814000E2C29D /* Car.m in Sources */,
-				0D4080CB1253816900E2C29D /* Engine.m in Sources */,
 				0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */,
 				0D40811E1253878400E2C29D /* MARTNSObject.m in Sources */,
 				0D40811F1253878400E2C29D /* RTIvar.m in Sources */,
@@ -333,7 +326,6 @@
 				1D3623260D0F684500981E51 /* Application.m in Sources */,
 				0D4080BF1253809900E2C29D /* Factory.m in Sources */,
 				0D4080C61253814000E2C29D /* Car.m in Sources */,
-				0D4080CA1253816900E2C29D /* Engine.m in Sources */,
 				0D4081241253878400E2C29D /* MARTNSObject.m in Sources */,
 				0D4081251253878400E2C29D /* RTIvar.m in Sources */,
 				0D4081261253878400E2C29D /* RTMethod.m in Sources */,

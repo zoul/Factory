@@ -1,6 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "Factory.h"
-#import "Engine.h"
 #import "Worker.h"
 #import "Car.h"
 
@@ -21,6 +20,8 @@
 {
     [factory release];
 }
+
+#pragma mark Assembling New Objects
 
 - (void) testUnknownClassAssembly
 {
@@ -54,7 +55,7 @@
     [factory addComponent:[Car class]];
     Car *car = [factory assemble:[Car class]];
     STAssertNotNil(car.engine, @"Can find singleton dependency.");
-    STAssertEquals(car.engine, engine, @"Filled dependency is the original instance.");
+    STAssertEquals(car.engine, engine, @"And is the original instance.");
     [engine release];
 }
 
@@ -64,6 +65,31 @@
     Worker *worker = [factory assemble:[Worker class]];
     STAssertNotNil(worker.factory, @"Factory found as a dependency.");
     STAssertEquals(worker.factory, factory, @"And is the original instance.");
+}
+
+#pragma mark Wiring Existing Objects
+
+- (void) testTrivialWiring
+{
+    Car *car = [[Car alloc] init];
+    STAssertNoThrow([factory wire:car], @"Can wire unknown objects.");
+}
+
+- (void) testBasicWiring
+{
+    [factory addComponent:[Engine class]];
+    Car *car = [[Car alloc] init];
+    [factory wire:car];
+    STAssertNotNil(car.engine, @"Wired the engine property.");
+}
+
+- (void) testPropertyOverwriting
+{
+    [factory addComponent:[Engine class]];
+    Car *car = [[Car alloc] init];
+    [car setTransmission:[[[Transmission alloc] init] autorelease]];
+    [factory wire:car];
+    STAssertNotNil(car.transmission, @"Wiring a car will not erase existing deps.");
 }
 
 @end
