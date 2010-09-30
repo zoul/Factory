@@ -21,6 +21,8 @@
 		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080C71253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080E91253824000E2C29D /* FactoryTests.m */; };
+		0D6D12E31254BA950044FEAC /* Porsche.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D12E21254BA950044FEAC /* Porsche.m */; };
+		0D6D12E41254BA950044FEAC /* Porsche.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D12E21254BA950044FEAC /* Porsche.m */; };
 		1D3623260D0F684500981E51 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Application.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -57,6 +59,8 @@
 		0D4080C41253814000E2C29D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Classes/Car.h; sourceTree = "<group>"; };
 		0D4080C51253814000E2C29D /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Car.m; path = Classes/Car.m; sourceTree = "<group>"; };
 		0D4080E91253824000E2C29D /* FactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FactoryTests.m; path = Tests/FactoryTests.m; sourceTree = "<group>"; };
+		0D6D12E11254BA950044FEAC /* Porsche.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Porsche.h; path = Classes/Porsche.h; sourceTree = "<group>"; };
+		0D6D12E21254BA950044FEAC /* Porsche.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Porsche.m; path = Classes/Porsche.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			children = (
 				0D4080C41253814000E2C29D /* Car.h */,
 				0D4080C51253814000E2C29D /* Car.m */,
+				0D6D12E11254BA950044FEAC /* Porsche.h */,
+				0D6D12E21254BA950044FEAC /* Porsche.m */,
 				0D08CD0312545A6B00BADE80 /* Worker.h */,
 				0D08CD0412545A6B00BADE80 /* Worker.m */,
 				0D08CF18125488BC00BADE80 /* Driver.h */,
@@ -293,6 +299,7 @@
 				0D08CD59125465B500BADE80 /* ClassAnalyzerTests.m in Sources */,
 				0D08CD9C12546DEF00BADE80 /* ClassPropertyTests.m in Sources */,
 				0D08CF1A125488BC00BADE80 /* Driver.m in Sources */,
+				0D6D12E31254BA950044FEAC /* Porsche.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +314,7 @@
 				0D08CD0612545A6B00BADE80 /* Worker.m in Sources */,
 				0D08CD301254638400BADE80 /* ClassAnalyzer.m in Sources */,
 				0D08CD3D125463C600BADE80 /* ClassProperty.m in Sources */,
+				0D6D12E41254BA950044FEAC /* Porsche.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

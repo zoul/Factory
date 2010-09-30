@@ -1,6 +1,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "ClassAnalyzer.h"
 #import "ClassProperty.h"
+#import "Porsche.h"
 #import "Car.h"
 
 @interface ClassAnalyzerTests : SenTestCase
@@ -21,10 +22,16 @@
     [analyzer release];
 }
 
-- (void) testPropertySniffing
+- (void) testDependencySniffing
 {
-    NSArray *props = [analyzer propertiesOf:[Car class]];
-    STAssertEquals([props count], (NSUInteger)2, @"Detect all properties.");
+    NSArray *deps = [analyzer dependenciesOf:[Car class]];
+    STAssertEquals([deps count], (NSUInteger)2, @"Detect all dependencies.");
+}
+
+- (void) testInheritedPropertySniffing
+{
+    NSArray *deps = [analyzer dependenciesOf:[Porsche class]];
+    STAssertEquals([deps count], (NSUInteger)3, @"Detect inherited deps.");
 }
 
 @end

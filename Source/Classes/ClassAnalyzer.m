@@ -5,7 +5,7 @@
 
 @implementation ClassAnalyzer
 
-- (NSArray*) propertiesOf: (Class) classObject
+- (NSArray*) propertiesOfSingleClass: (Class) classObject
 {
     NSMutableArray *result = [NSMutableArray array];
     unsigned int propCount = 0;
@@ -24,6 +24,29 @@
     }
     free(properties);
     return result;
+}
+
+- (NSArray*) propertiesOf: (Class) classObject
+{
+    NSMutableArray *properties = [NSMutableArray array];
+    Class candidate = classObject;
+    do {
+        [properties addObjectsFromArray:[self propertiesOfSingleClass:candidate]];
+        candidate = [candidate superclass];
+    } while (candidate != Nil);
+    return properties;
+}
+
+- (NSArray*) dependenciesOf: (Class) classObject
+{
+    NSArray *allProperties = [self propertiesOf:classObject];
+    NSMutableArray *deps = [NSMutableArray array];
+    for (ClassProperty *property in allProperties)
+        if ([property classType] != nil)
+            [deps addObject:property];
+    NSArray *excludes = [self propertiesOf:[NSObject class]];
+    [deps removeObjectsInArray:excludes];
+    return deps;
 }
 
 @end

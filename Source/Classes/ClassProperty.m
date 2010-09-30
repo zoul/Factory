@@ -18,10 +18,10 @@
     [super dealloc];
 }
 
-- (id) classForEncoding: (NSString*) encoding
+- (Class) classForEncoding: (NSString*) encoding
 {
     if (![encoding hasPrefix:@"@"])
-        return nil;
+        return Nil;
     NSString *suffix = [encoding substringFromIndex:2];
     NSString *className = [suffix substringToIndex:[suffix length]-1];
     return NSClassFromString(className);
