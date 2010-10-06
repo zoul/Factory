@@ -12,7 +12,7 @@ the dependency management yourself:
 
 For more examples see the [Tests].
 
-[Tests]: http://github.com/zoul/Factory/tree/master/Source/Tests/
+[Tests]: http://github.com/zoul/Factory/tree/master/Demo/Tests/
 
 Links
 -----
