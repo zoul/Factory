@@ -1,5 +1,5 @@
 About
-=====
+-----
 
 Factory is a very simple dependency injection container for Objective-C.
 It can assemble objects graphs for you so that you don’t have to mess with
@@ -15,7 +15,7 @@ For more examples see the [Tests].
 [Tests]: http://github.com/zoul/Factory/tree/master/Source/Tests/
 
 Links
-=====
+-----
 
 * [Inversion of Control Containers][fowler] by Martin Fowler
 * [Dependency Injection][hevery] by Miško Hevery
