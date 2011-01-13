@@ -1,9 +1,6 @@
 #import "Factory.h"
 
-@interface Worker : NSObject
-{
-    Factory *factory;
-}
+@interface Worker : NSObject {}
 
 @property(retain) Factory *factory;
 

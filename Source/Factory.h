@@ -1,11 +1,4 @@
-@class ClassAnalyzer;
-
-@interface Factory : NSObject
-{
-    ClassAnalyzer *analyzer;
-    NSMutableSet *components;
-    NSMutableSet *singletons;
-}
+@interface Factory : NSObject {}
 
 - (void) addComponent: (Class) component;
 - (void) addSingleton: (id) singleton;

@@ -1,9 +1,6 @@
 #import "Car.h"
 
-@interface Porsche : Car
-{
-    NSString *type;
-}
+@interface Porsche : Car {}
 
 @property(retain) NSString *type;
 

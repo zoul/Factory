@@ -2,7 +2,14 @@
 #import "ClassAnalyzer.h"
 #import "ClassProperty.h"
 
+@interface Factory ()
+@property(retain) ClassAnalyzer *analyzer;
+@property(retain) NSMutableSet *components;
+@property(retain) NSMutableSet *singletons;
+@end
+
 @implementation Factory
+@synthesize analyzer, components, singletons;
 
 - (id) init
 {
