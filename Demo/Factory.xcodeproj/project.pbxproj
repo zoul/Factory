@@ -14,6 +14,9 @@
 		0D08CF1A125488BC00BADE80 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CF19125488BC00BADE80 /* Driver.m */; };
 		0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
 		0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
+		0D36849C12DF0527004F279A /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36849B12DF0527004F279A /* Component.m */; };
+		0D36849D12DF0527004F279A /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36849B12DF0527004F279A /* Component.m */; };
+		0D3684AE12DF075D004F279A /* ComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3684AD12DF075D004F279A /* ComponentTests.m */; };
 		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080C71253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080E91253824000E2C29D /* FactoryTests.m */; };
@@ -52,6 +55,9 @@
 		0D08CF19125488BC00BADE80 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Driver.m; path = Classes/Driver.m; sourceTree = "<group>"; };
 		0D36846A12DEFE87004F279A /* AssemblyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssemblyTest.h; path = Tests/AssemblyTest.h; sourceTree = "<group>"; };
 		0D36846B12DEFE87004F279A /* AssemblyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssemblyTest.m; path = Tests/AssemblyTest.m; sourceTree = "<group>"; };
+		0D36849A12DF0527004F279A /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Component.h; path = ../Source/Component.h; sourceTree = SOURCE_ROOT; };
+		0D36849B12DF0527004F279A /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Component.m; path = ../Source/Component.m; sourceTree = SOURCE_ROOT; };
+		0D3684AD12DF075D004F279A /* ComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComponentTests.m; path = Tests/ComponentTests.m; sourceTree = "<group>"; };
 		0D40808812537FD800E2C29D /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40808912537FD800E2C29D /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		0D4080C41253814000E2C29D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Classes/Car.h; sourceTree = "<group>"; };
@@ -113,10 +119,16 @@
 			children = (
 				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
 				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
+				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
 				0D993BB8125CA3F000824C6A /* ClassProperty.h */,
 				0D993BB9125CA3F000824C6A /* ClassProperty.m */,
+				0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */,
+				0D36849A12DF0527004F279A /* Component.h */,
+				0D36849B12DF0527004F279A /* Component.m */,
+				0D3684AD12DF075D004F279A /* ComponentTests.m */,
 				0D993BBA125CA3F000824C6A /* Factory.h */,
 				0D993BBB125CA3F000824C6A /* Factory.m */,
+				0D4080E91253824000E2C29D /* FactoryTests.m */,
 			);
 			name = Factory;
 			sourceTree = "<group>";
@@ -138,16 +150,6 @@
 			name = "Testing Classes";
 			sourceTree = "<group>";
 		};
-		0D993BB5125CA3D600824C6A /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */,
-				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
-				0D4080E91253824000E2C29D /* FactoryTests.m */,
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +164,6 @@
 			children = (
 				0D4080BB1253808B00E2C29D /* Factory */,
 				0D4080C3125380FC00E2C29D /* Testing Classes */,
-				0D993BB5125CA3D600824C6A /* Tests */,
 				080E96DDFE201D6D7F000001 /* App Stuff */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -315,6 +316,8 @@
 				0D993BBD125CA3F000824C6A /* ClassProperty.m in Sources */,
 				0D993BBE125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */,
+				0D36849C12DF0527004F279A /* Component.m in Sources */,
+				0D3684AE12DF075D004F279A /* ComponentTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +334,7 @@
 				0D993BC0125CA3F000824C6A /* ClassProperty.m in Sources */,
 				0D993BC1125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */,
+				0D36849D12DF0527004F279A /* Component.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
