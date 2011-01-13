@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "AssemblyTest.h"
 #import "Factory.h"
 #import "Worker.h"
 #import "Driver.h"
@@ -101,6 +102,43 @@
     [car setTransmission:[[[Transmission alloc] init] autorelease]];
     [factory wire:car];
     STAssertNotNil(car.transmission, @"Wiring a car will not erase existing deps.");
+}
+
+#pragma mark Post-Assembly Hook
+
+/*
+    Sometimes you want to perform some init code in the component after
+    its dependencies have been set, like setting up KVO notifications.
+    If you have a method called “afterAssembling”, Factory will call
+    that method after it fills the dependencies. For details see the
+    following tests.
+*/
+
+- (void) testPostAssemblyHook
+{
+    [factory addComponent:[AssemblyTest class]];
+    AssemblyTest *test = [factory assemble:[AssemblyTest class]];
+    STAssertTrue([test assembled],
+        @"Post-assembly hook should be called after the component is created.");
+}
+
+- (void) testPostAssemblyHookAfterWiring
+{
+    AssemblyTest *test = [[AssemblyTest alloc] init];
+    [factory wire:test];
+    STAssertTrue([test assembled],
+        @"Post-assembly hook should be called after the component is wired.");
+    [test release];
+}
+
+- (void) testPostAssemblyHookWithRepeatedWiring
+{
+    [factory addComponent:[AssemblyTest class]];
+    AssemblyTest *test = [factory assemble:[AssemblyTest class]];
+    [factory wire:test];
+    STAssertEquals([test hookCallCount], (NSUInteger) 2,
+        @"If you create a component using -assemble and the call -wire on it, "
+         "the post-assembly hook will be called twice. Might be a problem.");
 }
 
 @end

@@ -12,6 +12,8 @@
 		0D08CD59125465B500BADE80 /* ClassAnalyzerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */; };
 		0D08CD9C12546DEF00BADE80 /* ClassPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */; };
 		0D08CF1A125488BC00BADE80 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CF19125488BC00BADE80 /* Driver.m */; };
+		0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
+		0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
 		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080C71253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080E91253824000E2C29D /* FactoryTests.m */; };
@@ -48,6 +50,8 @@
 		0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassPropertyTests.m; path = Tests/ClassPropertyTests.m; sourceTree = "<group>"; };
 		0D08CF18125488BC00BADE80 /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Driver.h; path = Classes/Driver.h; sourceTree = "<group>"; };
 		0D08CF19125488BC00BADE80 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Driver.m; path = Classes/Driver.m; sourceTree = "<group>"; };
+		0D36846A12DEFE87004F279A /* AssemblyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssemblyTest.h; path = Tests/AssemblyTest.h; sourceTree = "<group>"; };
+		0D36846B12DEFE87004F279A /* AssemblyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssemblyTest.m; path = Tests/AssemblyTest.m; sourceTree = "<group>"; };
 		0D40808812537FD800E2C29D /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40808912537FD800E2C29D /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		0D4080C41253814000E2C29D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Classes/Car.h; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				0D08CD0412545A6B00BADE80 /* Worker.m */,
 				0D08CF18125488BC00BADE80 /* Driver.h */,
 				0D08CF19125488BC00BADE80 /* Driver.m */,
+				0D36846A12DEFE87004F279A /* AssemblyTest.h */,
+				0D36846B12DEFE87004F279A /* AssemblyTest.m */,
 			);
 			name = "Testing Classes";
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 				0D993BBC125CA3F000824C6A /* ClassAnalyzer.m in Sources */,
 				0D993BBD125CA3F000824C6A /* ClassProperty.m in Sources */,
 				0D993BBE125CA3F000824C6A /* Factory.m in Sources */,
+				0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +330,7 @@
 				0D993BBF125CA3F000824C6A /* ClassAnalyzer.m in Sources */,
 				0D993BC0125CA3F000824C6A /* ClassProperty.m in Sources */,
 				0D993BC1125CA3F000824C6A /* Factory.m in Sources */,
+				0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

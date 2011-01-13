@@ -40,6 +40,7 @@
 
 - (void) wire: (id) instance
 {
+    // Fill dependencies
     NSArray *properties = [analyzer propertiesOf:[instance class]];
     for (ClassProperty *property in properties)
     {
@@ -52,6 +53,11 @@
         id dependency = [self assemble:[property classType]];
         [instance setValue:dependency forKey:[property name]];
     }
+
+    // Call the post-assembly hook if component supports it
+    SEL postAssemblyHook = @selector(afterAssembling);
+    if ([instance respondsToSelector:postAssemblyHook])
+        [instance performSelector:postAssemblyHook];
 }
 
 - (id) assemble: (Class) compType
