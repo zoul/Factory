@@ -14,12 +14,14 @@
 
 - (void) setUp
 {
+    [super setUp];
     factory = [[Factory alloc] init];
 }
 
 - (void) tearDown
 {
     [factory release];
+    [super tearDown];
 }
 
 #pragma mark Assembling New Objects

@@ -14,12 +14,14 @@
 
 - (void) setUp
 {
+    [super setUp];
     analyzer = [[ClassAnalyzer alloc] init];
 }
 
 - (void) tearDown
 {
     [analyzer release];
+    [super tearDown];
 }
 
 - (void) testDependencySniffing
