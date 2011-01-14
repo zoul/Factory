@@ -7,5 +7,6 @@
 
 - (id) initWithName: (NSString*) newName attributes: (NSString*) attString;
 + (id) propertyWithName: (NSString*) newName attributes: (NSString*) attString;
+- (BOOL) canBeSatisfiedBy: (Class) componentType;
 
 @end

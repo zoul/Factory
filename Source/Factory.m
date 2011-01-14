@@ -40,6 +40,19 @@
     [singletons addObject:singleton];
 }
 
+- (Class) componentClassForProperty: (ClassProperty*) property
+{
+    for (NSObject *s in singletons)
+        if ([property canBeSatisfiedBy:[s class]])
+            return [s class];
+    for (Component *c in [components allValues])
+        if ([property canBeSatisfiedBy:[c type]])
+            return [c type];
+    if ([property canBeSatisfiedBy:[self class]])
+        return [self class];
+    return Nil;
+}
+
 - (void) wire: (id) instance
 {
     // Fill dependencies
@@ -52,7 +65,7 @@
         // Skip property if already connected.
         if ([instance valueForKey:[property name]] != nil)
             continue;
-        id dependency = [self assemble:[[property attributes] classType]];
+        id dependency = [self assemble:[self componentClassForProperty:property]];
         [instance setValue:dependency forKey:[property name]];
     }
 

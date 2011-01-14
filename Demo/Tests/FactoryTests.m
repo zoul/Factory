@@ -144,7 +144,7 @@
 
 #pragma mark Protocol Deps
 
-- (void) TODO_testProtocolDependencies
+- (void) testProtocolDependencies
 {
     [factory addComponent:[RealTimeClock class]];
     [factory addComponent:[Driver class]];
