@@ -9,4 +9,6 @@
 + (id) attributeWithString: (NSString*) str;
 - (id) initWithString: (NSString*) str;
 
+- (BOOL) isCompatibleWithClass: (Class) someClass;
+
 @end

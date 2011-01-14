@@ -1,4 +1,5 @@
 #import "PropertyAttribute.h"
+#import <objc/runtime.h>
 
 @interface PropertyAttribute ()
 @property(retain) NSString *encodedForm;
@@ -83,6 +84,18 @@
     }
 
     return results;
+}
+
+- (BOOL) isCompatibleWithClass: (Class) someClass
+{
+    if (![self isObject])
+        return NO;
+    if ([self classType] && [self classType] != someClass)
+        return NO;
+    for (NSString *protoName in [self protocolNames])
+        if (!class_conformsToProtocol(someClass, NSProtocolFromString(protoName)))
+            return NO;
+    return YES;
 }
 
 #pragma mark Housekeeping

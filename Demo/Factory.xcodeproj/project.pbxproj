@@ -10,7 +10,6 @@
 		0D08CD0512545A6B00BADE80 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD0412545A6B00BADE80 /* Worker.m */; };
 		0D08CD0612545A6B00BADE80 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD0412545A6B00BADE80 /* Worker.m */; };
 		0D08CD59125465B500BADE80 /* ClassAnalyzerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */; };
-		0D08CD9C12546DEF00BADE80 /* ClassPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */; };
 		0D08CF1A125488BC00BADE80 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CF19125488BC00BADE80 /* Driver.m */; };
 		0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
 		0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
@@ -23,10 +22,8 @@
 		0D6D12E31254BA950044FEAC /* Porsche.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D12E21254BA950044FEAC /* Porsche.m */; };
 		0D6D12E41254BA950044FEAC /* Porsche.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D12E21254BA950044FEAC /* Porsche.m */; };
 		0D993BBC125CA3F000824C6A /* ClassAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */; };
-		0D993BBD125CA3F000824C6A /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BB9125CA3F000824C6A /* ClassProperty.m */; };
 		0D993BBE125CA3F000824C6A /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BBB125CA3F000824C6A /* Factory.m */; };
 		0D993BBF125CA3F000824C6A /* ClassAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */; };
-		0D993BC0125CA3F000824C6A /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BB9125CA3F000824C6A /* ClassProperty.m */; };
 		0D993BC1125CA3F000824C6A /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BBB125CA3F000824C6A /* Factory.m */; };
 		0DD4361912E059CE00AF9A78 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4361812E059CE00AF9A78 /* Clock.m */; };
 		0DD4369F12E0A28F00AF9A78 /* PropertyAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */; };
@@ -54,7 +51,6 @@
 		0D08CD0312545A6B00BADE80 /* Worker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Worker.h; path = Classes/Worker.h; sourceTree = "<group>"; };
 		0D08CD0412545A6B00BADE80 /* Worker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Worker.m; path = Classes/Worker.m; sourceTree = "<group>"; };
 		0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassAnalyzerTests.m; path = Tests/ClassAnalyzerTests.m; sourceTree = "<group>"; };
-		0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassPropertyTests.m; path = Tests/ClassPropertyTests.m; sourceTree = "<group>"; };
 		0D08CF18125488BC00BADE80 /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Driver.h; path = Classes/Driver.h; sourceTree = "<group>"; };
 		0D08CF19125488BC00BADE80 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Driver.m; path = Classes/Driver.m; sourceTree = "<group>"; };
 		0D36846A12DEFE87004F279A /* AssemblyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssemblyTest.h; path = Tests/AssemblyTest.h; sourceTree = "<group>"; };
@@ -71,8 +67,6 @@
 		0D6D12E21254BA950044FEAC /* Porsche.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Porsche.m; path = Classes/Porsche.m; sourceTree = "<group>"; };
 		0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassAnalyzer.h; path = ../Source/ClassAnalyzer.h; sourceTree = SOURCE_ROOT; };
 		0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassAnalyzer.m; path = ../Source/ClassAnalyzer.m; sourceTree = SOURCE_ROOT; };
-		0D993BB8125CA3F000824C6A /* ClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassProperty.h; path = ../Source/ClassProperty.h; sourceTree = SOURCE_ROOT; };
-		0D993BB9125CA3F000824C6A /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassProperty.m; path = ../Source/ClassProperty.m; sourceTree = SOURCE_ROOT; };
 		0D993BBA125CA3F000824C6A /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Factory.h; path = ../Source/Factory.h; sourceTree = SOURCE_ROOT; };
 		0D993BBB125CA3F000824C6A /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Factory.m; path = ../Source/Factory.m; sourceTree = SOURCE_ROOT; };
 		0DD4361712E059CE00AF9A78 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Tests/Clock.h; sourceTree = "<group>"; };
@@ -129,9 +123,6 @@
 				0DD4369D12E0A28F00AF9A78 /* PropertyAttribute.h */,
 				0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */,
 				0DD436A312E0A43800AF9A78 /* PropertyAttributeTests.m */,
-				0D993BB8125CA3F000824C6A /* ClassProperty.h */,
-				0D993BB9125CA3F000824C6A /* ClassProperty.m */,
-				0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */,
 				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
 				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
 				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
@@ -323,11 +314,9 @@
 				0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */,
 				0D08CD0512545A6B00BADE80 /* Worker.m in Sources */,
 				0D08CD59125465B500BADE80 /* ClassAnalyzerTests.m in Sources */,
-				0D08CD9C12546DEF00BADE80 /* ClassPropertyTests.m in Sources */,
 				0D08CF1A125488BC00BADE80 /* Driver.m in Sources */,
 				0D6D12E31254BA950044FEAC /* Porsche.m in Sources */,
 				0D993BBC125CA3F000824C6A /* ClassAnalyzer.m in Sources */,
-				0D993BBD125CA3F000824C6A /* ClassProperty.m in Sources */,
 				0D993BBE125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */,
 				0D36849C12DF0527004F279A /* Component.m in Sources */,
@@ -348,7 +337,6 @@
 				0D08CD0612545A6B00BADE80 /* Worker.m in Sources */,
 				0D6D12E41254BA950044FEAC /* Porsche.m in Sources */,
 				0D993BBF125CA3F000824C6A /* ClassAnalyzer.m in Sources */,
-				0D993BC0125CA3F000824C6A /* ClassProperty.m in Sources */,
 				0D993BC1125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */,
 				0D36849D12DF0527004F279A /* Component.m in Sources */,

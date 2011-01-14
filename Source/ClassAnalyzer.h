@@ -1,6 +1,6 @@
 @interface ClassAnalyzer : NSObject {}
 
-- (NSArray*) propertiesOf: (Class) classObject;
-- (NSArray*) dependenciesOf: (Class) classObject;
+- (NSDictionary*) propertiesOf: (Class) classObject;
+- (NSDictionary*) dependenciesOf: (Class) classObject;
 
 @end

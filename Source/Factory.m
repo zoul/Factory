@@ -1,6 +1,6 @@
 #import "Factory.h"
 #import "ClassAnalyzer.h"
-#import "ClassProperty.h"
+#import "PropertyAttribute.h"
 
 @interface Factory ()
 @property(retain) ClassAnalyzer *analyzer;
@@ -40,15 +40,15 @@
     [singletons addObject:singleton];
 }
 
-- (Class) componentClassForProperty: (ClassProperty*) property
+- (Class) componentClassForAttribute: (PropertyAttribute*) attribute
 {
     for (NSObject *s in singletons)
-        if ([property canBeSatisfiedBy:[s class]])
+        if ([attribute isCompatibleWithClass:[s class]])
             return [s class];
     for (Component *c in [components allValues])
-        if ([property canBeSatisfiedBy:[c type]])
+        if ([attribute isCompatibleWithClass:[c type]])
             return [c type];
-    if ([property canBeSatisfiedBy:[self class]])
+    if ([attribute isCompatibleWithClass:[self class]])
         return [self class];
     return Nil;
 }
@@ -56,21 +56,21 @@
 - (void) wire: (id) instance
 {
     // Fill dependencies
-    NSArray *properties = [analyzer propertiesOf:[instance class]];
-    for (ClassProperty *property in properties)
+    NSDictionary *properties = [analyzer propertiesOf:[instance class]];
+    [properties enumerateKeysAndObjectsUsingBlock:^(id name, id attributes, BOOL *stop)
     {
         // Skip primitive properties
-        if (![[property attributes] isObject])
-            continue;
+        if (![attributes isObject])
+            return;
         // Skip RO properties
-        if ([[property attributes] isReadOnly])
-            continue;
+        if ([attributes isReadOnly])
+            return;
         // Skip property if already connected
-        if ([instance valueForKey:[property name]] != nil)
-            continue;
-        id dependency = [self assemble:[self componentClassForProperty:property]];
-        [instance setValue:dependency forKey:[property name]];
-    }
+        if ([instance valueForKey:name] != nil)
+            return;
+        id dependency = [self assemble:[self componentClassForAttribute:attributes]];
+        [instance setValue:dependency forKey:name];
+    }];
 
     // Call the post-assembly hook if component supports it
     SEL postAssemblyHook = @selector(afterAssembling);
