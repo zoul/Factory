@@ -1,7 +1,6 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "ClassAnalyzer.h"
 #import "Porsche.h"
-#import "Driver.h"
 #import "Car.h"
 
 @interface ClassAnalyzerTests : SenTestCase
@@ -27,13 +26,17 @@
 - (void) testDependencySniffing
 {
     NSDictionary *deps = [analyzer dependenciesOf:[Car class]];
-    STAssertEquals([[deps allKeys] count], (NSUInteger)2, @"Detect all dependencies.");
+    STAssertEqualObjects([deps allKeys],
+        ([NSArray arrayWithObjects:@"engine", @"transmission", nil]),
+        @"Detect all dependencies.");
 }
 
 - (void) testInheritedPropertySniffing
 {
     NSDictionary *deps = [analyzer dependenciesOf:[Porsche class]];
-    STAssertEquals([[deps allKeys] count], (NSUInteger)3, @"Detect inherited deps.");
+    STAssertEqualObjects([deps allKeys],
+        ([NSArray arrayWithObjects:@"engine", @"type", @"transmission", nil]),
+        @"Detect inherited deps.");
 }
 
 @end
