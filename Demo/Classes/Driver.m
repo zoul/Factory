@@ -1,7 +1,7 @@
 #import "Driver.h"
 
 @implementation Driver
-@synthesize name;
+@synthesize name, clock;
 
 - (id) initWithName: (NSString*) newName
 {
@@ -13,6 +13,7 @@
 - (void) dealloc
 {
     [name release];
+    [clock release];
     [super dealloc];
 }
 

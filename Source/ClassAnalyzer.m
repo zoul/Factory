@@ -42,7 +42,7 @@
     NSArray *allProperties = [self propertiesOf:classObject];
     NSMutableArray *deps = [NSMutableArray array];
     for (ClassProperty *property in allProperties)
-        if ([property classType] != nil)
+        if ([[property attributes] classType] != nil)
             [deps addObject:property];
     NSArray *excludes = [self propertiesOf:[NSObject class]];
     [deps removeObjectsInArray:excludes];

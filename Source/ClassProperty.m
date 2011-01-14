@@ -2,17 +2,24 @@
 
 @interface ClassProperty ()
 @property(retain) NSString *name;
-@property(retain) NSString *attributes;
+@property(retain) PropertyAttribute *attributes;
 @end
 
 @implementation ClassProperty
 @synthesize name, attributes;
 
+#pragma mark Initialization
+
++ (id) propertyWithName: (NSString*) newName attributes: (NSString*) attString
+{
+    return [[[self alloc] initWithName:newName attributes:attString] autorelease];
+}
+
 - (id) initWithName: (NSString*) newName attributes: (NSString*) attString
 {
     [super init];
-    name = [newName retain];
-    attributes = [attString retain];
+    [self setName:newName];
+    [self setAttributes:[PropertyAttribute attributeWithString:attString]];
     return self;
 }
 
@@ -23,32 +30,12 @@
     [super dealloc];
 }
 
-- (Class) classForEncoding: (NSString*) encoding
-{
-    if (![encoding hasPrefix:@"@"])
-        return Nil;
-    NSString *suffix = [encoding substringFromIndex:2];
-    NSString *className = [suffix substringToIndex:[suffix length]-1];
-    return NSClassFromString(className);
-}
-
-- (Class) classType
-{
-    NSAssert([attributes hasPrefix:@"T"], @"Invalid attribute string.");
-    NSString *suffix = [attributes substringFromIndex:1];
-    NSString *typeStr = [suffix substringToIndex:[suffix rangeOfString:@","].location];
-    return [self classForEncoding:typeStr];
-}
-
-- (BOOL) isReadOnly
-{
-    return [attributes rangeOfString:@",R,"].location != NSNotFound ||
-        [attributes hasSuffix:@",R"];
-}
+#pragma mark Housekeeping
 
 - (NSString*) description
 {
-    return [NSString stringWithFormat:@"<Property: %@>", name];
+    return [NSString stringWithFormat:@"<%@ 0x%x: %@, atts: %@>",
+        [self class], self, name, [attributes encodedForm]];
 }
 
 - (NSUInteger) hash
@@ -58,10 +45,8 @@
 
 - (BOOL) isEqual: (id) object
 {
-    if (![object isMemberOfClass:[self class]])
-        return NO;
-    return [[object name] isEqual:name] &&
-        [[object attributes] isEqual:attributes];
+    return ([object class] == [self class]) ?
+        [[object name] isEqual:name] && [[object attributes] isEqual:attributes] : NO;
 }
 
 @end

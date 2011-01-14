@@ -2,6 +2,7 @@
 #import "ClassAnalyzer.h"
 #import "ClassProperty.h"
 #import "Porsche.h"
+#import "Driver.h"
 #import "Car.h"
 
 @interface ClassAnalyzerTests : SenTestCase

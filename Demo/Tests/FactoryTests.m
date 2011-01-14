@@ -3,6 +3,7 @@
 #import "Factory.h"
 #import "Worker.h"
 #import "Driver.h"
+#import "Clock.h"
 #import "Car.h"
 
 @interface FactoryTests : SenTestCase
@@ -139,6 +140,16 @@
     STAssertEquals([test hookCallCount], (NSUInteger) 2,
         @"If you create a component using -assemble and the call -wire on it, "
          "the post-assembly hook will be called twice. Might be a problem.");
+}
+
+#pragma mark Protocol Deps
+
+- (void) TODO_testProtocolDependencies
+{
+    [factory addComponent:[RealTimeClock class]];
+    [factory addComponent:[Driver class]];
+    Driver *driver = [factory assemble:[Driver class]];
+    STAssertNotNil([driver clock], @"Should satisfy deps with protocol type.");
 }
 
 @end

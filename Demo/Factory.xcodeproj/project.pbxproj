@@ -28,6 +28,10 @@
 		0D993BBF125CA3F000824C6A /* ClassAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */; };
 		0D993BC0125CA3F000824C6A /* ClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BB9125CA3F000824C6A /* ClassProperty.m */; };
 		0D993BC1125CA3F000824C6A /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BBB125CA3F000824C6A /* Factory.m */; };
+		0DD4361912E059CE00AF9A78 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4361812E059CE00AF9A78 /* Clock.m */; };
+		0DD4369F12E0A28F00AF9A78 /* PropertyAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */; };
+		0DD436A012E0A28F00AF9A78 /* PropertyAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */; };
+		0DD436A412E0A43800AF9A78 /* PropertyAttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD436A312E0A43800AF9A78 /* PropertyAttributeTests.m */; };
 		1D3623260D0F684500981E51 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Application.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -71,6 +75,11 @@
 		0D993BB9125CA3F000824C6A /* ClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassProperty.m; path = ../Source/ClassProperty.m; sourceTree = SOURCE_ROOT; };
 		0D993BBA125CA3F000824C6A /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Factory.h; path = ../Source/Factory.h; sourceTree = SOURCE_ROOT; };
 		0D993BBB125CA3F000824C6A /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Factory.m; path = ../Source/Factory.m; sourceTree = SOURCE_ROOT; };
+		0DD4361712E059CE00AF9A78 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Tests/Clock.h; sourceTree = "<group>"; };
+		0DD4361812E059CE00AF9A78 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Tests/Clock.m; sourceTree = "<group>"; };
+		0DD4369D12E0A28F00AF9A78 /* PropertyAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertyAttribute.h; path = ../Source/PropertyAttribute.h; sourceTree = SOURCE_ROOT; };
+		0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyAttribute.m; path = ../Source/PropertyAttribute.m; sourceTree = SOURCE_ROOT; };
+		0DD436A312E0A43800AF9A78 /* PropertyAttributeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyAttributeTests.m; path = Tests/PropertyAttributeTests.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
@@ -117,12 +126,15 @@
 		0D4080BB1253808B00E2C29D /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
-				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
-				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
+				0DD4369D12E0A28F00AF9A78 /* PropertyAttribute.h */,
+				0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */,
+				0DD436A312E0A43800AF9A78 /* PropertyAttributeTests.m */,
 				0D993BB8125CA3F000824C6A /* ClassProperty.h */,
 				0D993BB9125CA3F000824C6A /* ClassProperty.m */,
 				0D08CD9B12546DEF00BADE80 /* ClassPropertyTests.m */,
+				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
+				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
+				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
 				0D36849A12DF0527004F279A /* Component.h */,
 				0D36849B12DF0527004F279A /* Component.m */,
 				0D3684AD12DF075D004F279A /* ComponentTests.m */,
@@ -146,6 +158,8 @@
 				0D08CF19125488BC00BADE80 /* Driver.m */,
 				0D36846A12DEFE87004F279A /* AssemblyTest.h */,
 				0D36846B12DEFE87004F279A /* AssemblyTest.m */,
+				0DD4361712E059CE00AF9A78 /* Clock.h */,
+				0DD4361812E059CE00AF9A78 /* Clock.m */,
 			);
 			name = "Testing Classes";
 			sourceTree = "<group>";
@@ -318,6 +332,9 @@
 				0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */,
 				0D36849C12DF0527004F279A /* Component.m in Sources */,
 				0D3684AE12DF075D004F279A /* ComponentTests.m in Sources */,
+				0DD4361912E059CE00AF9A78 /* Clock.m in Sources */,
+				0DD4369F12E0A28F00AF9A78 /* PropertyAttribute.m in Sources */,
+				0DD436A412E0A43800AF9A78 /* PropertyAttributeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +352,7 @@
 				0D993BC1125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */,
 				0D36849D12DF0527004F279A /* Component.m in Sources */,
+				0DD436A012E0A28F00AF9A78 /* PropertyAttribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +383,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LogicTests-Info.plist";
 				OTHER_LDFLAGS = (
@@ -377,7 +396,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -397,6 +416,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LogicTests-Info.plist";
 				OTHER_LDFLAGS = (
@@ -409,7 +429,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = LogicTests;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
@@ -424,10 +444,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Factory-Info.plist";
 				PRODUCT_NAME = Factory;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -438,10 +459,11 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Factory-Info.plist";
 				PRODUCT_NAME = Factory;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -47,12 +47,12 @@
     for (ClassProperty *property in properties)
     {
         // Skip RO properties.
-        if ([property isReadOnly])
+        if ([[property attributes] isReadOnly])
             continue;
         // Skip property if already connected.
         if ([instance valueForKey:[property name]] != nil)
             continue;
-        id dependency = [self assemble:[property classType]];
+        id dependency = [self assemble:[[property attributes] classType]];
         [instance setValue:dependency forKey:[property name]];
     }
 
