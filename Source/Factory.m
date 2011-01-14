@@ -4,7 +4,7 @@
 
 @interface Factory ()
 @property(retain) ClassAnalyzer *analyzer;
-@property(retain) NSMutableSet *components;
+@property(retain) NSMutableDictionary *components;
 @property(retain) NSMutableSet *singletons;
 @end
 
@@ -15,7 +15,7 @@
 {
     [super init];
     analyzer = [[ClassAnalyzer alloc] init];
-    components = [[NSMutableSet alloc] init];
+    components = [[NSMutableDictionary alloc] init];
     singletons = [[NSMutableSet alloc] init];
     return self;
 }
@@ -28,9 +28,11 @@
     [super dealloc];
 }
 
-- (void) addComponent: (Class) component
+- (Component*) addComponent: (Class) componentType
 {
-    [components addObject:component];
+    id component = [Component componentWithClass:componentType];
+    [components setObject:component forKey:componentType];
+    return component;
 }
 
 - (void) addSingleton: (id) singleton
@@ -71,12 +73,9 @@
         if ([singleton isMemberOfClass:compType])
             return singleton;
 
-    // Do not assemble unknown components.
-    if (![components containsObject:compType])
-        return nil;
-
-    // Create component.
-    id instance = [[[compType alloc] init] autorelease];
+    // Create and wire new component instance.
+    // Will return nil for unknown components.
+    id instance = [[components objectForKey:compType] newInstance];
     [self wire:instance];
     return instance;
 }

@@ -1,6 +1,8 @@
+#import "Component.h"
+
 @interface Factory : NSObject {}
 
-- (void) addComponent: (Class) component;
+- (Component*) addComponent: (Class) component;
 - (void) addSingleton: (id) singleton;
 
 - (id) assemble: (Class) compType;
