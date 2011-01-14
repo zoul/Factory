@@ -1,13 +1,9 @@
-@interface ClassProperty : NSObject
-{
-    NSString *name;
-    NSString *attributes;
-}
+@interface ClassProperty : NSObject {}
 
-@property(readonly) NSString *name;
-@property(readonly) NSString *attributes;
+@property(readonly, retain) NSString *name;
+@property(readonly, retain) NSString *attributes;
 @property(readonly) Class classType;
-@property(readonly) BOOL readOnly;
+@property(readonly) BOOL isReadOnly;
 
 - (id) initWithName: (NSString*) newName attributes: (NSString*) attString;
 

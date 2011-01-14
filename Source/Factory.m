@@ -45,7 +45,7 @@
     for (ClassProperty *property in properties)
     {
         // Skip RO properties.
-        if ([property readOnly])
+        if ([property isReadOnly])
             continue;
         // Skip property if already connected.
         if ([instance valueForKey:[property name]] != nil)

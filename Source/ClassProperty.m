@@ -1,5 +1,10 @@
 #import "ClassProperty.h"
 
+@interface ClassProperty ()
+@property(retain) NSString *name;
+@property(retain) NSString *attributes;
+@end
+
 @implementation ClassProperty
 @synthesize name, attributes;
 
@@ -35,7 +40,7 @@
     return [self classForEncoding:typeStr];
 }
 
-- (BOOL) readOnly
+- (BOOL) isReadOnly
 {
     return [attributes rangeOfString:@",R,"].location != NSNotFound ||
         [attributes hasSuffix:@",R"];
