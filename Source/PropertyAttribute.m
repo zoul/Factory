@@ -35,11 +35,15 @@
         [encodedForm hasSuffix:@",R"];
 }
 
+- (BOOL) isObject
+{
+    return [encodedForm hasPrefix:@"T@"];
+}
+
 // T@"Car<NSObject><Clock>",&,Vcar
 - (Class) classType
 {
-    // Not a class type or type string invalid
-    if (![encodedForm hasPrefix:@"T@"])
+    if (![self isObject])
         return Nil;
 
     // Car<NSObject><Clock>",&,Vcar
@@ -53,8 +57,7 @@
 // T@"Car<NSObject><Clock>",&,Vcar
 - (NSSet*) protocolNames
 {
-    // Not a class type or type string invalid
-    if (![encodedForm hasPrefix:@"T@\""])
+    if (![self isObject])
         return nil;
 
     // Car<NSObject><Clock>",&,Vcar

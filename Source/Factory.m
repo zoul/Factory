@@ -59,10 +59,13 @@
     NSArray *properties = [analyzer propertiesOf:[instance class]];
     for (ClassProperty *property in properties)
     {
-        // Skip RO properties.
+        // Skip primitive properties
+        if (![[property attributes] isObject])
+            continue;
+        // Skip RO properties
         if ([[property attributes] isReadOnly])
             continue;
-        // Skip property if already connected.
+        // Skip property if already connected
         if ([instance valueForKey:[property name]] != nil)
             continue;
         id dependency = [self assemble:[self componentClassForProperty:property]];
