@@ -14,6 +14,15 @@ For more examples see the [Tests].
 
 [Tests]: http://github.com/zoul/Factory/tree/master/Demo/Tests/
 
+Notes
+-----
+
+* What to do with pure `id` types?
+* What to do with blocks? (`T@?`)
+* Have to add some kind of property skipping, not everything should
+  be wired from the start.
+* Lazy-wired properties would be interesting.
+
 Links
 -----
 
