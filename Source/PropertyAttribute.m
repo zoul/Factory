@@ -44,7 +44,8 @@
 // T@"Car<NSObject><Clock>",&,Vcar
 - (Class) classType
 {
-    if (![self isObject])
+    // Return Nil for pure “id” properties
+    if (![encodedForm hasPrefix:@"T@\""])
         return Nil;
 
     // Car<NSObject><Clock>",&,Vcar
@@ -58,14 +59,15 @@
 // T@"Car<NSObject><Clock>",&,Vcar
 - (NSSet*) protocolNames
 {
-    if (![self isObject])
+    // Return nil for pure “id” properties
+    if (![encodedForm hasPrefix:@"T@\""])
         return nil;
 
     // Car<NSObject><Clock>",&,Vcar
     NSString *suffix = [encodedForm substringFromIndex:3];
-    NSString *body = [suffix substringToIndex:[suffix rangeOfString:@"\""].location];
 
     // Bail out early if there are no protocols in the type string
+    NSString *body = [suffix substringToIndex:[suffix rangeOfString:@"\""].location];
     if ([body rangeOfString:@"<"].location == NSNotFound)
         return nil;
 

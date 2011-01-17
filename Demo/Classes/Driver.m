@@ -1,7 +1,7 @@
 #import "Driver.h"
 
 @implementation Driver
-@synthesize name, clock;
+@synthesize name, clock, context;
 
 - (id) initWithName: (NSString*) newName
 {
