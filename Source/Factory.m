@@ -68,6 +68,12 @@
         // Skip property if already connected
         if ([instance valueForKey:name] != nil)
             return;
+        // Hack, skips block properties
+        if ([[attributes encodedForm] hasPrefix:@"T@?"])
+            return;
+        // Hack, skips pure id properties
+        if ([attributes classType] == Nil && [attributes protocolNames] == nil)
+            return;
         id dependency = [self assemble:[self componentClassForAttribute:attributes]];
         [instance setValue:dependency forKey:name];
     }];
