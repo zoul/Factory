@@ -129,20 +129,15 @@
 			children = (
 				0DD4369D12E0A28F00AF9A78 /* TypeSignature.h */,
 				0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */,
-				0DD436A312E0A43800AF9A78 /* TypeSignatureTests.m */,
 				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
 				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
-				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
 				0DBAB45012E70B420035C18B /* Component.h */,
 				0DBAB45112E70B800035C18B /* ClassComponent.h */,
 				0DBAB45212E70B800035C18B /* ClassComponent.m */,
-				0D3684AD12DF075D004F279A /* ClassComponentTests.m */,
 				0DBAB45512E70D220035C18B /* SingletonComponent.h */,
 				0DBAB45612E70D220035C18B /* SingletonComponent.m */,
-				0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */,
 				0D993BBA125CA3F000824C6A /* Factory.h */,
 				0D993BBB125CA3F000824C6A /* Factory.m */,
-				0D4080E91253824000E2C29D /* FactoryTests.m */,
 			);
 			name = Factory;
 			sourceTree = "<group>";
@@ -166,6 +161,18 @@
 			name = "Testing Classes";
 			sourceTree = "<group>";
 		};
+		0DBAB4E212E731540035C18B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0DD436A312E0A43800AF9A78 /* TypeSignatureTests.m */,
+				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
+				0D3684AD12DF075D004F279A /* ClassComponentTests.m */,
+				0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */,
+				0D4080E91253824000E2C29D /* FactoryTests.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				0D4080BB1253808B00E2C29D /* Factory */,
+				0DBAB4E212E731540035C18B /* Tests */,
 				0D4080C3125380FC00E2C29D /* Testing Classes */,
 				080E96DDFE201D6D7F000001 /* App Stuff */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
