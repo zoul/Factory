@@ -1,6 +1,7 @@
 #import "Factory.h"
 #import "ClassAnalyzer.h"
 #import "PropertyAttribute.h"
+#import <objc/runtime.h>
 
 @interface Factory ()
 @property(retain) ClassAnalyzer *analyzer;
@@ -10,6 +11,8 @@
 
 @implementation Factory
 @synthesize analyzer, components, singletons;
+
+#pragma mark Initialization
 
 - (id) init
 {
@@ -28,6 +31,8 @@
     [super dealloc];
 }
 
+#pragma mark Component Management
+
 - (Component*) addComponent: (Class) componentType
 {
     id component = [Component componentWithClass:componentType];
@@ -40,18 +45,42 @@
     [singletons addObject:singleton];
 }
 
+#pragma mark Dependency Matching
+
+- (BOOL) canWireAttribute: (PropertyAttribute*) att
+{
+    return [att isObject]
+       && ![att isReadOnly]
+       && ![att isBlock]
+       && ![att isPureIdType];
+}
+
+- (BOOL) matchAttribute: (PropertyAttribute*) att withClass: (Class) someClass
+{
+    // Check class name
+    if ([att classType] && [att classType] != someClass)
+        return NO;
+    // Chech implemented protocols
+    for (NSString *protoName in [att protocolNames])
+        if (!class_conformsToProtocol(someClass, NSProtocolFromString(protoName)))
+            return NO;
+    return YES;
+}
+
 - (Class) componentClassForAttribute: (PropertyAttribute*) attribute
 {
     for (NSObject *s in singletons)
-        if ([attribute isCompatibleWithClass:[s class]])
+        if ([self matchAttribute:attribute withClass:[s class]])
             return [s class];
     for (Component *c in [components allValues])
-        if ([attribute isCompatibleWithClass:[c type]])
+        if ([self matchAttribute:attribute withClass:[c type]])
             return [c type];
-    if ([attribute isCompatibleWithClass:[self class]])
+    if ([self matchAttribute:attribute withClass:[self class]])
         return [self class];
     return Nil;
 }
+
+#pragma mark Wiring, Assembling
 
 - (void) wire: (id) instance
 {
@@ -59,20 +88,11 @@
     NSDictionary *properties = [analyzer propertiesOf:[instance class]];
     [properties enumerateKeysAndObjectsUsingBlock:^(id name, id attributes, BOOL *stop)
     {
-        // Skip primitive properties
-        if (![attributes isObject])
+        // Skip early if we cannot wire this property
+        if (![self canWireAttribute:attributes])
             return;
-        // Skip RO properties
-        if ([attributes isReadOnly])
-            return;
-        // Skip property if already connected
+        // Skip if property already set
         if ([instance valueForKey:name] != nil)
-            return;
-        // Hack, skips block properties
-        if ([[attributes encodedForm] hasPrefix:@"T@?"])
-            return;
-        // Hack, skips pure id properties
-        if ([attributes classType] == Nil && [attributes protocolNames] == nil)
             return;
         id dependency = [self assemble:[self componentClassForAttribute:attributes]];
         [instance setValue:dependency forKey:name];

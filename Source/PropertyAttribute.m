@@ -1,5 +1,4 @@
 #import "PropertyAttribute.h"
-#import <objc/runtime.h>
 
 @interface PropertyAttribute ()
 @property(retain) NSString *encodedForm;
@@ -28,7 +27,7 @@
     [super dealloc];
 }
 
-#pragma mark Body
+#pragma mark Predicates
 
 - (BOOL) isReadOnly
 {
@@ -41,10 +40,23 @@
     return [encodedForm hasPrefix:@"T@"];
 }
 
+- (BOOL) isPureIdType
+{
+    return [self isObject]
+        && [self classType] == Nil
+        && [self protocolNames] == nil;
+}
+
+- (BOOL) isBlock
+{
+    return [encodedForm hasPrefix:@"T@?"];
+}
+
+#pragma mark Properties
+
 // T@"Car<NSObject><Clock>",&,Vcar
 - (Class) classType
 {
-    // Return Nil for pure “id” properties
     if (![encodedForm hasPrefix:@"T@\""])
         return Nil;
 
@@ -59,7 +71,6 @@
 // T@"Car<NSObject><Clock>",&,Vcar
 - (NSSet*) protocolNames
 {
-    // Return nil for pure “id” properties
     if (![encodedForm hasPrefix:@"T@\""])
         return nil;
 
@@ -86,18 +97,6 @@
     }
 
     return results;
-}
-
-- (BOOL) isCompatibleWithClass: (Class) someClass
-{
-    if (![self isObject])
-        return NO;
-    if ([self classType] && [self classType] != someClass)
-        return NO;
-    for (NSString *protoName in [self protocolNames])
-        if (!class_conformsToProtocol(someClass, NSProtocolFromString(protoName)))
-            return NO;
-    return YES;
 }
 
 #pragma mark Housekeeping
