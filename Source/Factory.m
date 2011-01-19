@@ -3,6 +3,7 @@
 #import "TypeSignature.h"
 #import "SingletonComponent.h"
 #import "ClassComponent.h"
+#import "Component.h"
 
 @interface Factory ()
 @property(retain) ClassAnalyzer *analyzer;

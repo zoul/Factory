@@ -1,5 +1,3 @@
-#import "Component.h"
-
 @interface Factory : NSObject {}
 
 - (id) addComponent: (Class) component;
