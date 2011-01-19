@@ -142,6 +142,14 @@
          "the post-assembly hook will be called twice. Might be a problem.");
 }
 
+- (void) testPostAssemblyHookOnSingletons
+{
+    AssemblyTest *test = [[AssemblyTest alloc] init];
+    [factory addSingleton:test];
+    STAssertFalse([test assembled],
+        @"The post-assembly hook should not be called on registered singletons.");
+}
+
 #pragma mark Protocol Deps
 
 - (void) testProtocolDependencies
