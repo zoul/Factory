@@ -1,11 +1,11 @@
-#import "Component.h"
+#import "ClassComponent.h"
 
-@interface Component ()
-@property(retain) Class type;
+@interface ClassComponent ()
+@property(retain) Class classType;
 @end
 
-@implementation Component
-@synthesize type, customInit, customSetup;
+@implementation ClassComponent
+@synthesize classType, customInit, customSetup;
 
 #pragma mark Initialization
 
@@ -17,7 +17,7 @@
 - (id) initWithClass: (Class) newType
 {
     [super init];
-    [self setType:newType];
+    [self setClassType:newType];
     return self;
 }
 
@@ -25,16 +25,16 @@
 {
     [customSetup release];
     [customInit release];
-    [type release];
+    [classType release];
     [super dealloc];
 }
 
-#pragma mark Instance Management
+#pragma mark Component
 
-- (id) newInstance
+- (id) instance
 {
     id instance = (customInit == nil) ?
-        [[type alloc] init] : customInit();
+        [[classType alloc] init] : customInit();
     if (customSetup != nil)
         customSetup(instance);
     return [instance autorelease];

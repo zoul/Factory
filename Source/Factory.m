@@ -1,16 +1,17 @@
 #import "Factory.h"
 #import "ClassAnalyzer.h"
 #import "PropertyAttribute.h"
+#import "SingletonComponent.h"
+#import "ClassComponent.h"
 #import <objc/runtime.h>
 
 @interface Factory ()
 @property(retain) ClassAnalyzer *analyzer;
-@property(retain) NSMutableDictionary *components;
-@property(retain) NSMutableSet *singletons;
+@property(retain) NSMutableSet *components;
 @end
 
 @implementation Factory
-@synthesize analyzer, components, singletons;
+@synthesize analyzer, components;
 
 #pragma mark Initialization
 
@@ -18,31 +19,31 @@
 {
     [super init];
     analyzer = [[ClassAnalyzer alloc] init];
-    components = [[NSMutableDictionary alloc] init];
-    singletons = [[NSMutableSet alloc] init];
+    components = [[NSMutableArray alloc] init];
+    // TODO: This is a circular reference, the Factory will never get released
+    [components addObject:[SingletonComponent componentWithObject:self]];
     return self;
 }
 
 - (void) dealloc
 {
     [analyzer release];
-    [singletons release];
     [components release];
     [super dealloc];
 }
 
 #pragma mark Component Management
 
-- (Component*) addComponent: (Class) componentType
+- (ClassComponent*) addComponent: (Class) componentType
 {
-    id component = [Component componentWithClass:componentType];
-    [components setObject:component forKey:componentType];
+    id component = [ClassComponent componentWithClass:componentType];
+    [components addObject:component];
     return component;
 }
 
 - (void) addSingleton: (id) singleton
 {
-    [singletons addObject:singleton];
+    [components addObject:[SingletonComponent componentWithObject:singleton]];
 }
 
 #pragma mark Dependency Matching
@@ -67,22 +68,17 @@
     return YES;
 }
 
-- (Class) componentClassForAttribute: (PropertyAttribute*) attribute
+- (id<Component>) componentForAttribute: (PropertyAttribute*) attribute
 {
-    for (NSObject *s in singletons)
-        if ([self matchAttribute:attribute withClass:[s class]])
-            return [s class];
-    for (Component *c in [components allValues])
-        if ([self matchAttribute:attribute withClass:[c type]])
-            return [c type];
-    if ([self matchAttribute:attribute withClass:[self class]])
-        return [self class];
-    return Nil;
+    for (id<Component> candidate in components)
+        if ([self matchAttribute:attribute withClass:[candidate classType]])
+            return candidate;
+    return nil;
 }
 
 #pragma mark Wiring, Assembling
 
-- (void) wire: (id) instance
+- (id) wire: (id) instance
 {
     // Fill dependencies
     NSDictionary *properties = [analyzer propertiesOf:[instance class]];
@@ -94,7 +90,8 @@
         // Skip if property already set
         if ([instance valueForKey:name] != nil)
             return;
-        id dependency = [self assemble:[self componentClassForAttribute:attributes]];
+        // TODO: We’re wiring the singletons here, too
+        id dependency = [self wire:[[self componentForAttribute:attributes] instance]];
         [instance setValue:dependency forKey:name];
     }];
 
@@ -102,24 +99,16 @@
     SEL postAssemblyHook = @selector(afterAssembling);
     if ([instance respondsToSelector:postAssemblyHook])
         [instance performSelector:postAssemblyHook];
+    
+    return instance;
 }
 
 - (id) assemble: (Class) compType
 {
-    // The factory is a special kind of dependency, too.
-    if ([self isMemberOfClass:compType])
-        return self;
-
-    // Try to find a singleton first.
-    for (id singleton in singletons)
-        if ([singleton isMemberOfClass:compType])
-            return singleton;
-
-    // Create and wire new component instance.
-    // Will return nil for unknown components.
-    id instance = [[components objectForKey:compType] newInstance];
-    [self wire:instance];
-    return instance;
+    for (id<Component> candidate in components)
+        if ([candidate classType] == compType)
+            return [self wire:[candidate instance]];
+    return nil;
 }
 
 @end

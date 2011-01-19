@@ -13,9 +13,7 @@
 		0D08CF1A125488BC00BADE80 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D08CF19125488BC00BADE80 /* Driver.m */; };
 		0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
 		0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36846B12DEFE87004F279A /* AssemblyTest.m */; };
-		0D36849C12DF0527004F279A /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36849B12DF0527004F279A /* Component.m */; };
-		0D36849D12DF0527004F279A /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D36849B12DF0527004F279A /* Component.m */; };
-		0D3684AE12DF075D004F279A /* ComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3684AD12DF075D004F279A /* ComponentTests.m */; };
+		0D3684AE12DF075D004F279A /* ClassComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3684AD12DF075D004F279A /* ClassComponentTests.m */; };
 		0D4080C61253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080C71253814000E2C29D /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080C51253814000E2C29D /* Car.m */; };
 		0D4080EA1253824000E2C29D /* FactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4080E91253824000E2C29D /* FactoryTests.m */; };
@@ -25,6 +23,11 @@
 		0D993BBE125CA3F000824C6A /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BBB125CA3F000824C6A /* Factory.m */; };
 		0D993BBF125CA3F000824C6A /* ClassAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */; };
 		0D993BC1125CA3F000824C6A /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D993BBB125CA3F000824C6A /* Factory.m */; };
+		0DBAB45312E70B800035C18B /* ClassComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB45212E70B800035C18B /* ClassComponent.m */; };
+		0DBAB45412E70B800035C18B /* ClassComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB45212E70B800035C18B /* ClassComponent.m */; };
+		0DBAB45712E70D220035C18B /* SingletonComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB45612E70D220035C18B /* SingletonComponent.m */; };
+		0DBAB45812E70D220035C18B /* SingletonComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB45612E70D220035C18B /* SingletonComponent.m */; };
+		0DBAB47C12E710AA0035C18B /* SingletonComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */; };
 		0DD4361912E059CE00AF9A78 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4361812E059CE00AF9A78 /* Clock.m */; };
 		0DD4369F12E0A28F00AF9A78 /* PropertyAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */; };
 		0DD436A012E0A28F00AF9A78 /* PropertyAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */; };
@@ -55,9 +58,7 @@
 		0D08CF19125488BC00BADE80 /* Driver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Driver.m; path = Classes/Driver.m; sourceTree = "<group>"; };
 		0D36846A12DEFE87004F279A /* AssemblyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssemblyTest.h; path = Tests/AssemblyTest.h; sourceTree = "<group>"; };
 		0D36846B12DEFE87004F279A /* AssemblyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssemblyTest.m; path = Tests/AssemblyTest.m; sourceTree = "<group>"; };
-		0D36849A12DF0527004F279A /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Component.h; path = ../Source/Component.h; sourceTree = SOURCE_ROOT; };
-		0D36849B12DF0527004F279A /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Component.m; path = ../Source/Component.m; sourceTree = SOURCE_ROOT; };
-		0D3684AD12DF075D004F279A /* ComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComponentTests.m; path = Tests/ComponentTests.m; sourceTree = "<group>"; };
+		0D3684AD12DF075D004F279A /* ClassComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassComponentTests.m; path = Tests/ClassComponentTests.m; sourceTree = "<group>"; };
 		0D40808812537FD800E2C29D /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D40808912537FD800E2C29D /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		0D4080C41253814000E2C29D /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Classes/Car.h; sourceTree = "<group>"; };
@@ -69,6 +70,12 @@
 		0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassAnalyzer.m; path = ../Source/ClassAnalyzer.m; sourceTree = SOURCE_ROOT; };
 		0D993BBA125CA3F000824C6A /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Factory.h; path = ../Source/Factory.h; sourceTree = SOURCE_ROOT; };
 		0D993BBB125CA3F000824C6A /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Factory.m; path = ../Source/Factory.m; sourceTree = SOURCE_ROOT; };
+		0DBAB45012E70B420035C18B /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Component.h; path = ../Source/Component.h; sourceTree = SOURCE_ROOT; };
+		0DBAB45112E70B800035C18B /* ClassComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassComponent.h; path = ../Source/ClassComponent.h; sourceTree = SOURCE_ROOT; };
+		0DBAB45212E70B800035C18B /* ClassComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassComponent.m; path = ../Source/ClassComponent.m; sourceTree = SOURCE_ROOT; };
+		0DBAB45512E70D220035C18B /* SingletonComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingletonComponent.h; path = ../Source/SingletonComponent.h; sourceTree = SOURCE_ROOT; };
+		0DBAB45612E70D220035C18B /* SingletonComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingletonComponent.m; path = ../Source/SingletonComponent.m; sourceTree = SOURCE_ROOT; };
+		0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingletonComponentTests.m; path = Tests/SingletonComponentTests.m; sourceTree = "<group>"; };
 		0DD4361712E059CE00AF9A78 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Tests/Clock.h; sourceTree = "<group>"; };
 		0DD4361812E059CE00AF9A78 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Tests/Clock.m; sourceTree = "<group>"; };
 		0DD4369D12E0A28F00AF9A78 /* PropertyAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertyAttribute.h; path = ../Source/PropertyAttribute.h; sourceTree = SOURCE_ROOT; };
@@ -126,9 +133,13 @@
 				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
 				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
 				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
-				0D36849A12DF0527004F279A /* Component.h */,
-				0D36849B12DF0527004F279A /* Component.m */,
-				0D3684AD12DF075D004F279A /* ComponentTests.m */,
+				0DBAB45012E70B420035C18B /* Component.h */,
+				0DBAB45112E70B800035C18B /* ClassComponent.h */,
+				0DBAB45212E70B800035C18B /* ClassComponent.m */,
+				0D3684AD12DF075D004F279A /* ClassComponentTests.m */,
+				0DBAB45512E70D220035C18B /* SingletonComponent.h */,
+				0DBAB45612E70D220035C18B /* SingletonComponent.m */,
+				0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */,
 				0D993BBA125CA3F000824C6A /* Factory.h */,
 				0D993BBB125CA3F000824C6A /* Factory.m */,
 				0D4080E91253824000E2C29D /* FactoryTests.m */,
@@ -319,11 +330,13 @@
 				0D993BBC125CA3F000824C6A /* ClassAnalyzer.m in Sources */,
 				0D993BBE125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */,
-				0D36849C12DF0527004F279A /* Component.m in Sources */,
-				0D3684AE12DF075D004F279A /* ComponentTests.m in Sources */,
+				0D3684AE12DF075D004F279A /* ClassComponentTests.m in Sources */,
 				0DD4361912E059CE00AF9A78 /* Clock.m in Sources */,
 				0DD4369F12E0A28F00AF9A78 /* PropertyAttribute.m in Sources */,
 				0DD436A412E0A43800AF9A78 /* PropertyAttributeTests.m in Sources */,
+				0DBAB45312E70B800035C18B /* ClassComponent.m in Sources */,
+				0DBAB45712E70D220035C18B /* SingletonComponent.m in Sources */,
+				0DBAB47C12E710AA0035C18B /* SingletonComponentTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +352,9 @@
 				0D993BBF125CA3F000824C6A /* ClassAnalyzer.m in Sources */,
 				0D993BC1125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */,
-				0D36849D12DF0527004F279A /* Component.m in Sources */,
 				0DD436A012E0A28F00AF9A78 /* PropertyAttribute.m in Sources */,
+				0DBAB45412E70B800035C18B /* ClassComponent.m in Sources */,
+				0DBAB45812E70D220035C18B /* SingletonComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
