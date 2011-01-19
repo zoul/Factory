@@ -29,9 +29,9 @@
 		0DBAB45812E70D220035C18B /* SingletonComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB45612E70D220035C18B /* SingletonComponent.m */; };
 		0DBAB47C12E710AA0035C18B /* SingletonComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */; };
 		0DD4361912E059CE00AF9A78 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4361812E059CE00AF9A78 /* Clock.m */; };
-		0DD4369F12E0A28F00AF9A78 /* PropertyAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */; };
-		0DD436A012E0A28F00AF9A78 /* PropertyAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */; };
-		0DD436A412E0A43800AF9A78 /* PropertyAttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD436A312E0A43800AF9A78 /* PropertyAttributeTests.m */; };
+		0DD4369F12E0A28F00AF9A78 /* TypeSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */; };
+		0DD436A012E0A28F00AF9A78 /* TypeSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */; };
+		0DD436A412E0A43800AF9A78 /* TypeSignatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD436A312E0A43800AF9A78 /* TypeSignatureTests.m */; };
 		1D3623260D0F684500981E51 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Application.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -78,9 +78,9 @@
 		0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingletonComponentTests.m; path = Tests/SingletonComponentTests.m; sourceTree = "<group>"; };
 		0DD4361712E059CE00AF9A78 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Tests/Clock.h; sourceTree = "<group>"; };
 		0DD4361812E059CE00AF9A78 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Tests/Clock.m; sourceTree = "<group>"; };
-		0DD4369D12E0A28F00AF9A78 /* PropertyAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertyAttribute.h; path = ../Source/PropertyAttribute.h; sourceTree = SOURCE_ROOT; };
-		0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyAttribute.m; path = ../Source/PropertyAttribute.m; sourceTree = SOURCE_ROOT; };
-		0DD436A312E0A43800AF9A78 /* PropertyAttributeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyAttributeTests.m; path = Tests/PropertyAttributeTests.m; sourceTree = "<group>"; };
+		0DD4369D12E0A28F00AF9A78 /* TypeSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSignature.h; path = ../Source/TypeSignature.h; sourceTree = SOURCE_ROOT; };
+		0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TypeSignature.m; path = ../Source/TypeSignature.m; sourceTree = SOURCE_ROOT; };
+		0DD436A312E0A43800AF9A78 /* TypeSignatureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TypeSignatureTests.m; path = Tests/TypeSignatureTests.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
@@ -127,9 +127,9 @@
 		0D4080BB1253808B00E2C29D /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				0DD4369D12E0A28F00AF9A78 /* PropertyAttribute.h */,
-				0DD4369E12E0A28F00AF9A78 /* PropertyAttribute.m */,
-				0DD436A312E0A43800AF9A78 /* PropertyAttributeTests.m */,
+				0DD4369D12E0A28F00AF9A78 /* TypeSignature.h */,
+				0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */,
+				0DD436A312E0A43800AF9A78 /* TypeSignatureTests.m */,
 				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
 				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
 				0D08CD58125465B500BADE80 /* ClassAnalyzerTests.m */,
@@ -332,8 +332,8 @@
 				0D36846C12DEFE87004F279A /* AssemblyTest.m in Sources */,
 				0D3684AE12DF075D004F279A /* ClassComponentTests.m in Sources */,
 				0DD4361912E059CE00AF9A78 /* Clock.m in Sources */,
-				0DD4369F12E0A28F00AF9A78 /* PropertyAttribute.m in Sources */,
-				0DD436A412E0A43800AF9A78 /* PropertyAttributeTests.m in Sources */,
+				0DD4369F12E0A28F00AF9A78 /* TypeSignature.m in Sources */,
+				0DD436A412E0A43800AF9A78 /* TypeSignatureTests.m in Sources */,
 				0DBAB45312E70B800035C18B /* ClassComponent.m in Sources */,
 				0DBAB45712E70D220035C18B /* SingletonComponent.m in Sources */,
 				0DBAB47C12E710AA0035C18B /* SingletonComponentTests.m in Sources */,
@@ -352,7 +352,7 @@
 				0D993BBF125CA3F000824C6A /* ClassAnalyzer.m in Sources */,
 				0D993BC1125CA3F000824C6A /* Factory.m in Sources */,
 				0D36846D12DEFE87004F279A /* AssemblyTest.m in Sources */,
-				0DD436A012E0A28F00AF9A78 /* PropertyAttribute.m in Sources */,
+				0DD436A012E0A28F00AF9A78 /* TypeSignature.m in Sources */,
 				0DBAB45412E70B800035C18B /* ClassComponent.m in Sources */,
 				0DBAB45812E70D220035C18B /* SingletonComponent.m in Sources */,
 			);

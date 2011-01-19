@@ -1,15 +1,16 @@
-#import "PropertyAttribute.h"
+#import "TypeSignature.h"
+#import <objc/runtime.h>
 
-@interface PropertyAttribute ()
+@interface TypeSignature ()
 @property(retain) NSString *encodedForm;
 @end
 
-@implementation PropertyAttribute
+@implementation TypeSignature
 @synthesize encodedForm;
 
 #pragma mark Initialization
 
-+ (id) attributeWithString: (NSString*) str
++ (id) signatureWithString: (NSString*) str
 {
     return [[[self alloc] initWithString:str] autorelease];
 }
@@ -97,6 +98,18 @@
     }
 
     return results;
+}
+
+- (BOOL) matchesClass: (Class) type
+{
+    // Check class name
+    if ([self classType] && [self classType] != type)
+        return NO;
+    // Chech implemented protocols
+    for (NSString *protoName in [self protocolNames])
+        if (!class_conformsToProtocol(type, NSProtocolFromString(protoName)))
+            return NO;
+    return YES;
 }
 
 #pragma mark Housekeeping

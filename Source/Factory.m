@@ -1,9 +1,8 @@
 #import "Factory.h"
 #import "ClassAnalyzer.h"
-#import "PropertyAttribute.h"
+#import "TypeSignature.h"
 #import "SingletonComponent.h"
 #import "ClassComponent.h"
-#import <objc/runtime.h>
 
 @interface Factory ()
 @property(retain) ClassAnalyzer *analyzer;
@@ -48,30 +47,18 @@
 
 #pragma mark Dependency Matching
 
-- (BOOL) canWireAttribute: (PropertyAttribute*) att
+- (BOOL) canWireSignature: (TypeSignature*) sig
 {
-    return [att isObject]
-       && ![att isReadOnly]
-       && ![att isBlock]
-       && ![att isPureIdType];
+    return [sig isObject]
+       && ![sig isReadOnly]
+       && ![sig isBlock]
+       && ![sig isPureIdType];
 }
 
-- (BOOL) matchAttribute: (PropertyAttribute*) att withClass: (Class) someClass
-{
-    // Check class name
-    if ([att classType] && [att classType] != someClass)
-        return NO;
-    // Chech implemented protocols
-    for (NSString *protoName in [att protocolNames])
-        if (!class_conformsToProtocol(someClass, NSProtocolFromString(protoName)))
-            return NO;
-    return YES;
-}
-
-- (id<Component>) componentForAttribute: (PropertyAttribute*) attribute
+- (id<Component>) componentForSignature: (TypeSignature*) sig
 {
     for (id<Component> candidate in components)
-        if ([self matchAttribute:attribute withClass:[candidate classType]])
+        if ([sig matchesClass:[candidate classType]])
             return candidate;
     return nil;
 }
@@ -82,16 +69,16 @@
 {
     // Fill dependencies
     NSDictionary *properties = [analyzer propertiesOf:[instance class]];
-    [properties enumerateKeysAndObjectsUsingBlock:^(id name, id attributes, BOOL *stop)
+    [properties enumerateKeysAndObjectsUsingBlock:^(id name, id signature, BOOL *stop)
     {
         // Skip early if we cannot wire this property
-        if (![self canWireAttribute:attributes])
+        if (![self canWireSignature:signature])
             return;
         // Skip if property already set
         if ([instance valueForKey:name] != nil)
             return;
         // TODO: We’re wiring the singletons here, too
-        id dependency = [self wire:[[self componentForAttribute:attributes] instance]];
+        id dependency = [self wire:[[self componentForSignature:signature] instance]];
         [instance setValue:dependency forKey:name];
     }];
 

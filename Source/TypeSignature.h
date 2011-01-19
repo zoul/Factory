@@ -1,4 +1,4 @@
-@interface PropertyAttribute : NSObject {}
+@interface TypeSignature : NSObject {}
 
 @property(readonly, retain) NSString *encodedForm;
 @property(readonly) NSSet *protocolNames;
@@ -9,7 +9,9 @@
 @property(readonly) BOOL isBlock;
 @property(readonly) BOOL isPureIdType;
 
-+ (id) attributeWithString: (NSString*) str;
++ (id) signatureWithString: (NSString*) str;
 - (id) initWithString: (NSString*) str;
+
+- (BOOL) matchesClass: (Class) type;
 
 @end

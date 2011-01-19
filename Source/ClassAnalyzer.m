@@ -1,5 +1,5 @@
 #import "ClassAnalyzer.h"
-#import "PropertyAttribute.h"
+#import "TypeSignature.h"
 #import <Foundation/NSObjCRuntime.h>
 #import <objc/runtime.h>
 
@@ -18,7 +18,7 @@
             stringWithCString:property_getAttributes(properties[i])
             encoding:NSASCIIStringEncoding];
         [result
-            setObject:[PropertyAttribute attributeWithString:attributes]
+            setObject:[TypeSignature signatureWithString:attributes]
             forKey:name];
     }
     free(properties);
