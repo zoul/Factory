@@ -28,6 +28,8 @@
 		0DBAB45712E70D220035C18B /* SingletonComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB45612E70D220035C18B /* SingletonComponent.m */; };
 		0DBAB45812E70D220035C18B /* SingletonComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB45612E70D220035C18B /* SingletonComponent.m */; };
 		0DBAB47C12E710AA0035C18B /* SingletonComponentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */; };
+		0DBAB4EC12E737B40035C18B /* FactoryComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB4EB12E737B40035C18B /* FactoryComponent.m */; };
+		0DBAB4ED12E737B40035C18B /* FactoryComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBAB4EB12E737B40035C18B /* FactoryComponent.m */; };
 		0DD4361912E059CE00AF9A78 /* Clock.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4361812E059CE00AF9A78 /* Clock.m */; };
 		0DD4369F12E0A28F00AF9A78 /* TypeSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */; };
 		0DD436A012E0A28F00AF9A78 /* TypeSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */; };
@@ -76,6 +78,8 @@
 		0DBAB45512E70D220035C18B /* SingletonComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingletonComponent.h; path = ../Source/SingletonComponent.h; sourceTree = SOURCE_ROOT; };
 		0DBAB45612E70D220035C18B /* SingletonComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingletonComponent.m; path = ../Source/SingletonComponent.m; sourceTree = SOURCE_ROOT; };
 		0DBAB47B12E710AA0035C18B /* SingletonComponentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingletonComponentTests.m; path = Tests/SingletonComponentTests.m; sourceTree = "<group>"; };
+		0DBAB4EA12E737B40035C18B /* FactoryComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FactoryComponent.h; path = ../Source/FactoryComponent.h; sourceTree = SOURCE_ROOT; };
+		0DBAB4EB12E737B40035C18B /* FactoryComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FactoryComponent.m; path = ../Source/FactoryComponent.m; sourceTree = SOURCE_ROOT; };
 		0DD4361712E059CE00AF9A78 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clock.h; path = Tests/Clock.h; sourceTree = "<group>"; };
 		0DD4361812E059CE00AF9A78 /* Clock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Clock.m; path = Tests/Clock.m; sourceTree = "<group>"; };
 		0DD4369D12E0A28F00AF9A78 /* TypeSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSignature.h; path = ../Source/TypeSignature.h; sourceTree = SOURCE_ROOT; };
@@ -136,6 +140,8 @@
 				0DBAB45212E70B800035C18B /* ClassComponent.m */,
 				0DBAB45512E70D220035C18B /* SingletonComponent.h */,
 				0DBAB45612E70D220035C18B /* SingletonComponent.m */,
+				0DBAB4EA12E737B40035C18B /* FactoryComponent.h */,
+				0DBAB4EB12E737B40035C18B /* FactoryComponent.m */,
 				0D993BBA125CA3F000824C6A /* Factory.h */,
 				0D993BBB125CA3F000824C6A /* Factory.m */,
 			);
@@ -345,6 +351,7 @@
 				0DBAB45312E70B800035C18B /* ClassComponent.m in Sources */,
 				0DBAB45712E70D220035C18B /* SingletonComponent.m in Sources */,
 				0DBAB47C12E710AA0035C18B /* SingletonComponentTests.m in Sources */,
+				0DBAB4EC12E737B40035C18B /* FactoryComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +370,7 @@
 				0DD436A012E0A28F00AF9A78 /* TypeSignature.m in Sources */,
 				0DBAB45412E70B800035C18B /* ClassComponent.m in Sources */,
 				0DBAB45812E70D220035C18B /* SingletonComponent.m in Sources */,
+				0DBAB4ED12E737B40035C18B /* FactoryComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

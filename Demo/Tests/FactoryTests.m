@@ -26,6 +26,12 @@
     [super tearDown];
 }
 
+- (void) testMemoryManagement
+{
+    STAssertEquals([factory retainCount], (NSUInteger) 1,
+        @"Fresh Factory should have retain count == 1.");
+}
+
 #pragma mark Assembling New Objects
 
 - (void) testUnknownClassAssembly

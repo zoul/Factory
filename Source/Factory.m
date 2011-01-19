@@ -2,6 +2,7 @@
 #import "ClassAnalyzer.h"
 #import "TypeSignature.h"
 #import "SingletonComponent.h"
+#import "FactoryComponent.h"
 #import "ClassComponent.h"
 #import "Component.h"
 
@@ -20,8 +21,7 @@
     [super init];
     analyzer = [[ClassAnalyzer alloc] init];
     components = [[NSMutableArray alloc] init];
-    // TODO: This is a circular reference, the Factory will never get released
-    [components addObject:[SingletonComponent componentWithObject:self]];
+    [components addObject:[FactoryComponent componentWithFactory:self]];
     return self;
 }
 
