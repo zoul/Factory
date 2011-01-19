@@ -148,6 +148,7 @@
     [factory addSingleton:test];
     STAssertFalse([test assembled],
         @"The post-assembly hook should not be called on registered singletons.");
+    [test release];
 }
 
 #pragma mark Protocol Deps
