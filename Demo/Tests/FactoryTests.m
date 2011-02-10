@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "ClassComponent.h"
 #import "AssemblyTest.h"
 #import "Factory.h"
 #import "Worker.h"
@@ -121,6 +122,18 @@
     [factory addComponent:[Driver class]];
     Driver *driver = [factory assemble:[Driver class]];
     STAssertNotNil([driver clock], @"Should satisfy deps with protocol type.");
+}
+
+#pragma mark Property Ignoring
+
+- (void) testPropertyIgnoring
+{
+    [[factory addComponent:[Car class]]
+        setIgnoredProperties:[NSArray arrayWithObject:@"transmission"]];
+    [factory addComponent:[Engine class]];
+    [factory addComponent:[Transmission class]];
+    STAssertNil([[factory assemble:[Car class]] transmission],
+        @"Ignored properties should not get wired.");
 }
 
 @end

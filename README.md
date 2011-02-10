@@ -17,7 +17,6 @@ For more examples see the [Tests].
 Notes
 -----
 
-* Add property skipping
 * Lazy-wired properties would be interesting
 * Instance sealing to prevent changing deps after assembling?
 * Detect dependency loops

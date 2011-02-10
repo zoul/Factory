@@ -42,4 +42,12 @@
         @"The custom setup block should run after creation.");
 }
 
+- (void) testPropertyIgnoring
+{
+    comp = [ClassComponent componentWithClass:[Car class]];
+    [comp setIgnoredProperties:[NSArray arrayWithObject:@"transmission"]];
+    STAssertFalse(!![[comp properties] objectForKey:@"transmission"],
+        @"Ignored properties should be filtered out of the property list.");
+}
+
 @end

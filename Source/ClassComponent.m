@@ -6,7 +6,7 @@
 @end
 
 @implementation ClassComponent
-@synthesize classType, customInit, customSetup;
+@synthesize classType, customInit, customSetup, ignoredProperties;
 
 #pragma mark Initialization
 
@@ -24,6 +24,7 @@
 
 - (void) dealloc
 {
+    [ignoredProperties release];
     [customSetup release];
     [customInit release];
     [classType release];
@@ -43,7 +44,10 @@
 
 - (NSDictionary*) properties
 {
-    return [ClassAnalyzer propertiesOf:[self classType]];
+    NSMutableDictionary *allProps = [NSMutableDictionary
+        dictionaryWithDictionary:[ClassAnalyzer propertiesOf:[self classType]]];
+    [allProps removeObjectsForKeys:ignoredProperties];
+    return [NSDictionary dictionaryWithDictionary:allProps];
 }
 
 @end
