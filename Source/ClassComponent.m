@@ -1,4 +1,5 @@
 #import "ClassComponent.h"
+#import "ClassAnalyzer.h"
 
 @interface ClassComponent ()
 @property(retain) Class classType;
@@ -38,6 +39,11 @@
     if (customSetup != nil)
         customSetup(instance);
     return [instance autorelease];
+}
+
+- (NSDictionary*) properties
+{
+    return [ClassAnalyzer propertiesOf:[self classType]];
 }
 
 @end

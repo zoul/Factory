@@ -31,4 +31,9 @@
     return factory;
 }
 
+- (NSDictionary*) properties
+{
+    return nil;
+}
+
 @end

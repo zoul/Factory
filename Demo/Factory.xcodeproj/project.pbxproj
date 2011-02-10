@@ -128,13 +128,20 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		0D4080BB1253808B00E2C29D /* Factory */ = {
+		0D3CA1401303D1F0009A9729 /* Class Analysis */ = {
 			isa = PBXGroup;
 			children = (
 				0DD4369D12E0A28F00AF9A78 /* TypeSignature.h */,
 				0DD4369E12E0A28F00AF9A78 /* TypeSignature.m */,
 				0D993BB6125CA3F000824C6A /* ClassAnalyzer.h */,
 				0D993BB7125CA3F000824C6A /* ClassAnalyzer.m */,
+			);
+			name = "Class Analysis";
+			sourceTree = "<group>";
+		};
+		0D3CA1411303D1FD009A9729 /* Components */ = {
+			isa = PBXGroup;
+			children = (
 				0DBAB45012E70B420035C18B /* Component.h */,
 				0DBAB45112E70B800035C18B /* ClassComponent.h */,
 				0DBAB45212E70B800035C18B /* ClassComponent.m */,
@@ -142,6 +149,15 @@
 				0DBAB45612E70D220035C18B /* SingletonComponent.m */,
 				0DBAB4EA12E737B40035C18B /* FactoryComponent.h */,
 				0DBAB4EB12E737B40035C18B /* FactoryComponent.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		0D4080BB1253808B00E2C29D /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				0D3CA1401303D1F0009A9729 /* Class Analysis */,
+				0D3CA1411303D1FD009A9729 /* Components */,
 				0D993BBA125CA3F000824C6A /* Factory.h */,
 				0D993BBB125CA3F000824C6A /* Factory.m */,
 			);

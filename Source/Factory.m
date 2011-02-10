@@ -1,5 +1,4 @@
 #import "Factory.h"
-#import "ClassAnalyzer.h"
 #import "TypeSignature.h"
 #import "SingletonComponent.h"
 #import "FactoryComponent.h"
@@ -7,19 +6,17 @@
 #import "Component.h"
 
 @interface Factory ()
-@property(retain) ClassAnalyzer *analyzer;
 @property(retain) NSMutableSet *components;
 @end
 
 @implementation Factory
-@synthesize analyzer, components;
+@synthesize components;
 
 #pragma mark Initialization
 
 - (id) init
 {
     [super init];
-    analyzer = [[ClassAnalyzer alloc] init];
     components = [[NSMutableArray alloc] init];
     [components addObject:[FactoryComponent componentWithFactory:self]];
     return self;
@@ -27,7 +24,6 @@
 
 - (void) dealloc
 {
-    [analyzer release];
     [components release];
     [super dealloc];
 }
@@ -66,22 +62,20 @@
 
 #pragma mark Wiring, Assembling
 
-- (id) wire: (id) instance
+- (id) wire: (id<Component>) component
 {
-    // Fill dependencies
-    NSDictionary *properties = [analyzer propertiesOf:[instance class]];
-    [properties enumerateKeysAndObjectsUsingBlock:^(id name, id signature, BOOL *stop)
-    {
-        // Skip early if we cannot wire this property
-        if (![self canWireSignature:signature])
-            return;
-        // Skip if property already set
-        if ([instance valueForKey:name] != nil)
-            return;
-        // TODO: We’re wiring the singletons here, too
-        id dependency = [self wire:[[self componentForSignature:signature] instance]];
-        [instance setValue:dependency forKey:name];
-    }];
+    // Get an instance of the component
+    id instance = [component instance];
+    NSDictionary *deps = [component properties];
+    
+    // Wire component dependencies
+    for (NSString *name in [deps allKeys]) {
+        TypeSignature *signature = [deps objectForKey:name];
+        if ([self canWireSignature:signature]) {
+            id dependency = [self wire:[self componentForSignature:signature]];
+            [instance setValue:dependency forKey:name];
+        }
+    }
 
     // Call the post-assembly hook if component supports it
     SEL postAssemblyHook = @selector(afterAssembling);
@@ -95,7 +89,7 @@
 {
     for (id<Component> candidate in components)
         if ([candidate classType] == compType)
-            return [self wire:[candidate instance]];
+            return [self wire:candidate];
     return nil;
 }
 

@@ -30,6 +30,12 @@
     return [instance class];
 }
 
+- (NSDictionary*) properties
+{
+    // There is nothing to be wired in a singleton
+    return nil;
+}
+
 - (BOOL) isEqual: (id) object
 {
     return ([object class] == [self class]) ?

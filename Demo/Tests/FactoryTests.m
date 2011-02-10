@@ -86,31 +86,6 @@
         @"Does not attempt to wire read-only properties.");
 }
 
-#pragma mark Wiring Existing Objects
-
-- (void) testTrivialWiring
-{
-    Car *car = [[Car alloc] init];
-    STAssertNoThrow([factory wire:car], @"Can wire unknown objects.");
-}
-
-- (void) testBasicWiring
-{
-    [factory addComponent:[Engine class]];
-    Car *car = [[Car alloc] init];
-    [factory wire:car];
-    STAssertNotNil(car.engine, @"Wired the engine property.");
-}
-
-- (void) testPropertyOverwriting
-{
-    [factory addComponent:[Engine class]];
-    Car *car = [[Car alloc] init];
-    [car setTransmission:[[[Transmission alloc] init] autorelease]];
-    [factory wire:car];
-    STAssertNotNil(car.transmission, @"Wiring a car will not erase existing deps.");
-}
-
 #pragma mark Post-Assembly Hook
 
 /*
@@ -127,25 +102,6 @@
     AssemblyTest *test = [factory assemble:[AssemblyTest class]];
     STAssertTrue([test assembled],
         @"Post-assembly hook should be called after the component is created.");
-}
-
-- (void) testPostAssemblyHookAfterWiring
-{
-    AssemblyTest *test = [[AssemblyTest alloc] init];
-    [factory wire:test];
-    STAssertTrue([test assembled],
-        @"Post-assembly hook should be called after the component is wired.");
-    [test release];
-}
-
-- (void) testPostAssemblyHookWithRepeatedWiring
-{
-    [factory addComponent:[AssemblyTest class]];
-    AssemblyTest *test = [factory assemble:[AssemblyTest class]];
-    [factory wire:test];
-    STAssertEquals([test hookCallCount], (NSUInteger) 2,
-        @"If you create a component using -assemble and the call -wire on it, "
-         "the post-assembly hook will be called twice. Might be a problem.");
 }
 
 - (void) testPostAssemblyHookOnSingletons

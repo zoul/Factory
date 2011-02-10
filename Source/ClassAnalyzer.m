@@ -5,7 +5,7 @@
 
 @implementation ClassAnalyzer
 
-- (NSDictionary*) propertiesOfSingleClass: (Class) classObject
++ (NSDictionary*) propertiesOfSingleClass: (Class) classObject
 {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     unsigned int propCount = 0;
@@ -25,7 +25,7 @@
     return result;
 }
 
-- (NSDictionary*) propertiesOf: (Class) classObject
++ (NSDictionary*) propertiesOf: (Class) classObject
 {
     NSMutableDictionary *properties = [NSMutableDictionary dictionary];
     Class candidate = classObject;
@@ -36,7 +36,7 @@
     return properties;
 }
 
-- (NSDictionary*) dependenciesOf: (Class) classObject
++ (NSDictionary*) dependenciesOf: (Class) classObject
 {
     NSDictionary *allProperties = [self propertiesOf:classObject];
     NSMutableDictionary *deps = [NSMutableDictionary dictionary];
