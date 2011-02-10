@@ -17,9 +17,10 @@ For more examples see the [Tests].
 Notes
 -----
 
-* Have to add some kind of property skipping, not everything should
-  be wired from the start.
-* Lazy-wired properties would be interesting.
+* Add property skipping
+* Lazy-wired properties would be interesting
+* Instance sealing to prevent changing deps after assembling?
+* Detect dependency loops
 
 Links
 -----
